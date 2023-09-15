@@ -1,7 +1,6 @@
 # Lecture-Notes
-Lecture notes of most of the math courses I've taken. Part of them are post on Zhihu.
 
-[Zhihu](https://www.zhihu.com/column/c_1300029162464858112) & [Github](https://github.com/luozhlun/Lecture-Notes)
+Lecture notes of most of the math courses I've taken.  [Zhihu](https://www.zhihu.com/column/c_1300029162464858112) & [Github](https://github.com/luozhlun/Lecture-Notes)
 
 Pandoc option: 
 
