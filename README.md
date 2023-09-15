@@ -1,7 +1,11 @@
 # Lecture-Notes
-Lecture notes of most of the math courses I've taken. Part of them are post on Zhihu
+Lecture notes of most of the math courses I've taken. Part of them are post on Zhihu.
 
-使用 Vscode + Pandoc 进行笔记整理 [知乎](https://www.zhihu.com/column/c_1300029162464858112) & [Github](https://github.com/luozhlun/Lecture-Notes)
+[Zhihu](https://www.zhihu.com/column/c_1300029162464858112) & [Github](https://github.com/luozhlun/Lecture-Notes)
+
+Pandoc option: 
+
+    --template=indentfirst.latex --filter pandoc-crossref --cite --pdf-engine=xelatex -V mainfont="Times New Roman" -V CJKoptions=BoldFont="SimHei" -V CJKmainfont="SimSun"
 
 ## Analysis
 
