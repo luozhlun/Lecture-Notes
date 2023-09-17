@@ -43,17 +43,17 @@ Pandoc option:
 2. [复变函数 第四章 级数](https://zhuanlan.zhihu.com/p/501191694)
 3. [复变函数 第五章 留数及其应用](https://zhuanlan.zhihu.com/p/523934740)
 4. [复变函数 第六章 共形映射](https://zhuanlan.zhihu.com/p/528340622)
-5. [Complex Analysis Part1](analysis\复分析笔记%201.md)
-6. [Complex Analysis Part2](analysis\复分析笔记%202.md)
-7. [Complex Analysis Part3](analysis\复分析笔记%203.md)
+5. [Complex Analysis Part1](analysis/复分析笔记%201.md)
+6. [Complex Analysis Part2](analysis/复分析笔记%202.md)
+7. [Complex Analysis Part3](analysis/复分析笔记%203.md)
 
 ## Topology
 
-1. [点集拓扑 第一章 拓扑空间与连续性](topology\点集拓扑笔记%201%20拓扑空间与连续性.md)
-2. [点集拓扑 第二章 几个重要的拓扑性质](topology\点集拓扑笔记%202%20几个重要的拓扑性质.md)
-3. [点集拓扑 第三章 商空间与闭曲面](topology\点集拓扑笔记%203%20商空间与闭曲面.md)
-4. [点集拓扑 第四章 同伦与基本群](topology\点集拓扑笔记%204%20同伦与基本群.md)
-5. [Algebraic Topology](topology\代数拓扑笔记.md)
+1. [点集拓扑 第一章 拓扑空间与连续性](topology/点集拓扑笔记%201%20拓扑空间与连续性.md)
+2. [点集拓扑 第二章 几个重要的拓扑性质](topology/点集拓扑笔记%202%20几个重要的拓扑性质.md)
+3. [点集拓扑 第三章 商空间与闭曲面](topology/点集拓扑笔记%203%20商空间与闭曲面.md)
+4. [点集拓扑 第四章 同伦与基本群](topology/点集拓扑笔记%204%20同伦与基本群.md)
+5. [Algebraic Topology](topology/代数拓扑笔记.md)
 
 ## Probability
 
@@ -62,16 +62,16 @@ Pandoc option:
 3. [基础概率论 第三章 随机变量与分布函数](https://zhuanlan.zhihu.com/p/500096021)
 4. [基础概率论 第四章 分布的数字特征与特征函数](https://zhuanlan.zhihu.com/p/514374837)
 5. [基础概率论 第五章 极限定理](https://zhuanlan.zhihu.com/p/529804865)
-6. [数理统计](statistics\数理统计笔记.md)
-7. [Probability Ch.1 Measure Theory](statistics\Probability%201.md)
+6. [数理统计](statistics/数理统计笔记.md)
+7. [Probability Ch.1 Measure Theory](statistics/Probability%201.md)
 
 ## Geometry
 
 1. [解析几何](https://zhuanlan.zhihu.com/p/268763332)
-2. [微分几何 第一章 欧氏空间](geometry\微分几何笔记%201%20欧氏空间.md)
-3. [微分几何 第二章 曲线的局部理论](geometry\微分几何笔记%202%20曲线的局部理论.md)
-4. [微分几何 第三章 曲面的局部理论](geometry\微分几何笔记%203%20曲面的局部理论.md)
-5. [微分几何 第四章 标架与曲面论基本定理](geometry\微分几何笔记%204%20标架与曲面论基本定理.md)
-6. [微分几何 第五章 曲面的内蕴几何学](geometry\微分几何笔记%205%20曲面的内蕴几何学.md)
+2. [微分几何 第一章 欧氏空间](geometry/微分几何笔记%201%20欧氏空间.md)
+3. [微分几何 第二章 曲线的局部理论](geometry/微分几何笔记%202%20曲线的局部理论.md)
+4. [微分几何 第三章 曲面的局部理论](geometry/微分几何笔记%203%20曲面的局部理论.md)
+5. [微分几何 第四章 标架与曲面论基本定理](geometry/微分几何笔记%204%20标架与曲面论基本定理.md)
+6. [微分几何 第五章 曲面的内蕴几何学](geometry/微分几何笔记%205%20曲面的内蕴几何学.md)
 
 
