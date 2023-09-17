@@ -1,40 +1,68 @@
 
 - [Chapter 1 Measure Theory](#chapter-1-measure-theory)
   - [1.1 Probability space](#11-probability-space)
+    - [1.1.1 Algebra](#111-algebra)
+    - [1.1.2 Measure](#112-measure)
+    - [1.1.3 Lebesgue-Stieltjes measure](#113-lebesgue-stieltjes-measure)
+  - [1.2 Distributions](#12-distributions)
 
 
 # Chapter 1 Measure Theory
 
 ## 1.1 Probability space
 
-$\bf Def\ (\sigma-field)$
+### 1.1.1 Algebra
 
-$\mathcal{F}$ is called a **$\sigma$-field** if $\mathcal{F}$ is a non-empty collection of subsets of $\Omega$ s.t.
+$\bf Def$
 
-1. (closed under complement) $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F}$
-2. (closed under countable union) countably many $A_i\in\mathcal{F}\Rightarrow \cup_iA_i\in\mathcal{F}$
+Assume $\Omega$ is a set. $\mathcal{F}\subset\mathcal{P}(\Omega)$ is non-empty.
 
-$(\Omega,\mathcal{F})$ is called a **measurable space**. If replace 2. with *(closed under finite union)*, call it an algebra. $\sigma$-field is **algebra**. Converse is false. (EX 1.1.6)
+1. $\mathcal{F}$ is called a **semi-algebra** on $\Omega$ if
+   1. $A,B\in\mathcal{F}\Rightarrow A\cap B\in\mathcal{F}$
+   2. If $A\in\mathcal{F}$, then $A^c$ is a disjoint finite union of sets in $\mathcal{F}$ 
+2. $\mathcal{F}$ is called a **algebra** on $\Omega$ if
+   1. $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F}$
+   2. finitely many $A_i\in\mathcal{F}\Rightarrow \bigcup_iA_i\in\mathcal{F}$
+3. $\mathcal{F}$ is called a **$\sigma$-algebra** on $\Omega$ if
+   1. $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F  }$
+   2. countably many $A_i\in\mathcal{F}\Rightarrow \bigcup_iA_i\in\mathcal{F}$
 
-$\bf Cor$
+$\bf Rmk$
 
-1. (closed under countable intersection) countably many $A_i\in\mathcal{F}\Rightarrow \cap_iA_i\in\mathcal{F}$
-2. $\varnothing,\Omega\in\mathcal{F}$
+1. If $\mathcal{F}$ is a semi-algebra on $\Omega$, then $\varnothing\in\mathcal{F}$
+2. If $\mathcal{F}$ is an ($\sigma-$)algebra on $\Omega$, then
+    1. $\varnothing,\Omega\in\mathcal{F}$
+    2. finitely(countably) many $A_i\in\mathcal{F}\Rightarrow \bigcap_iA_i\in\mathcal{F}$
+3. Assume $\mathcal{A}\subset P(\Omega)$. The smallest $\sigma-$algebra that contains $\mathcal{A}$ is denoted by $\sigma(\mathcal{A})$.
 
 <br/><br/>
 
-$\bf Def\ (Measure)$
+$\bf e.g.\ (Borel\ \sigma-algebra)$
 
-A **measure** on $(\Omega,\mathcal{F})$ is a function $\mu:\mathcal{F}\to[0,\infty]$ s.t.
-
-1. (countable additivity) countably many disjoint $A_i\in\mathcal{F}\Rightarrow\mu(\cup_iA_i)=\sum_i\mu(A_i)$
-2. $\mu(\varnothing)=0$
-
-If $\mu(\Omega)=1$, then it's called a **probability measure**, usually denoted by $P$. $(\Omega,\mathcal{F},P)$ is called a probability space, where $A\in \mathcal{F}$ are called **events**. $\Omega$ is called the set of outcomes or **sample set**.
+Topological space $(X,\tau)$. $\sigma(\tau)$ is called the **Borel $\sigma-$algebra** on $X$. The Borel $\sigma-$algebra on $\mathbb{R^n}$ is denoted by $\mathcal{B}^n$.
 
 <br/><br/>
 
-$\bf Thm 1.1.1$
+### 1.1.2 Measure
+
+$\bf Def$
+
+1. A **measure** on an algebra $\mathcal{F}$ is a function $\mu:\mathcal{F}\to[0,\infty]$ s.t.
+   1. $\forall A\in\mathcal{A},\mu(A)\geq\mu(\varnothing)=0$
+   2. countably many disjoint $A_i\in\mathcal{F}$ with $A=\bigcup_i A_i\in\mathcal{F}\Rightarrow\mu(\bigcup_iA_i)=\sum_i\mu(A_i)$
+2. A **measure** on a $\sigma-$algebra $\mathcal{F}$ is a function $\mu:\mathcal{F}\to[0,\infty]$ s.t.
+   1. $\forall A\in\mathcal{A},\mu(A)\geq\mu(\varnothing)=0$
+   2. countably many disjoint $A_i\in\mathcal{F}\Rightarrow\mu(\bigcup_iA_i)=\sum_i\mu(A_i)$
+
+<br/><br/>
+
+$\bf Def$
+
+$(\Omega,\mathcal{F},\mu)$ is called a **measure space** if $\mathcal{F}$ is a $\sigma-$algebra on $\Omega$, and $\mu$ is a measure on $(\Omega,\mathcal{F})$. If $\mu(\Omega)=1$, then $\mu$ called a **probability measure**, usually denoted by $P$. $(\Omega,\mathcal{F},P)$ is called a **probability space**, where $A\in \mathcal{F}$ are called **events**. $\Omega$ is called the set of outcomes or **sample set**.
+
+<br/><br/>
+
+$\bf Thm\ 1.1.1$
 
 Let $\mu$ be a measure on $(\Omega,\mathcal{F})$, then
 1. (monotonicity) If $A\subset B$, then $\mu(A)\leq\mu(B)$
@@ -53,15 +81,77 @@ Let $\mu$ be a measure on $(\Omega,\mathcal{F})$, then
 
 $\bf e.g.\ (Discrete\ probability\ space)$
 
-$\Omega$ countable, $\mathcal{F}=2^\Omega$. Suppose we have a function $P:\Omega\to[0,\infty)$ s.t. $\forall w\in\Omega,P(w)\geq0$, we define $\mu(A):=\sum_{w\in A}P(w)$. Then $(\Omega,\mathcal{F},\mu)$ is a measure space.
+$\Omega$ countable, $\mathcal{F}=2^\Omega$. Suppose we have a function $P:\Omega\to[0,\infty)$ s.t. $\forall w\in\Omega,P(w)\geq0$, we define $\mu(A):=\sum_{w\in A}P(w)$. Then $(\Omega,\mathcal{F},\mu)$ is a measure space, called the **discrete probability space**.
 
 <br/><br/>
 
-$\bf e.g.\ (Continuous\ probability\ space)$
+### 1.1.3 Lebesgue-Stieltjes measure
 
-Given a **Stieltjes measure function** $F$ on $\mathbb{R}$, which means it satisfies
+$\bf Def\ (Stieltjes\ function)$
 
-1. $F$ is non-decreasing.
-2. $F$ is right continuous, that is, $\lim_{y\downarrow x}F(y)=F(x)$
+$F$ is said to be a **Stieltjes function** on $\mathbb{R}$ if $F$ is increasing and right continuous, i.e. $F(x+)=F(x),\forall x\in\mathbb{R}$.
 
-then there's a unique measure $\mu$ on $(\mathbb{R},\mathcal{B})$ with $\mu((a,b])=F(b)-F(a)$. When $F(x)=x$, $\mu$ is called **Lebesgue measure**.
+<br/><br/>
+
+$\bf Thm\ 1.1.4$
+
+Given any Stieltjes function $F$, there's a unique measure $\mu$ on $(\mathbb{R},\mathcal{B})$ with $\mu((a,b])=F(b)-F(a)$, called the **Lebesgue-Stieltjes measure**. When $F(x)=x$, $\mu$ is called **Lebesgue measure**.
+
+> $\it Idea$
+> 
+> $\bf Lem\ 1.1.7$
+> 
+> If $\mathcal{S}$ is a semi-algebra, then $\bar{\mathcal{S}}=\{\text{disjoint unions of sets in }\mathcal{S}\}$ is an algebra, called the algebra generated by $\mathcal{S}$.
+> 
+> $\bf Thm\ 1.1.9$
+> 
+> Let $\mathcal{S}$ be a semi-algebra. Let $\mu$ be a set function on $\mathcal{S}$ s.t.
+> 
+> 1. $\mu(\varnothing)=0$
+> 2. If $S\in\mathcal{S}$ is a finite disjoint union of sets $S_i\in\mathcal{S}$, then $\mu(\mathcal{S})=\sum_{i=1}^n\mu(\mathcal{S}_i)$
+> 3. If $S\in\mathcal{S}$ is a countable disjoint union of sets $S_i\in\mathcal{S}$, then $\mu(\mathcal{S})\leq\sum_{i=1}^\infty\mu(\mathcal{S}_i)$
+> 
+> Then $\mu$ has a unique extension $\bar\mu$ that is a measure on $\bar{\mathcal{S}}$. If $\bar\mu$ is $\sigma-$finite then there is a unique
+extension $\nu$ that is a measure on $\sigma(S)$.
+
+<br/><br/>
+
+## 1.2 Distributions
+
+$\bf Def\ (Random\ variable)$
+
+$(\Omega,\mathcal{F},P)$ probability space. A set function $X:\Omega\to\mathbb{R}$ is said to be a random variable if it's $\mathcal{F}$ measurable, i.e. for any Borel set $B\in\mathcal{B}$, $X^{-1}(B)=\{w\in\Omega:X(w)\in B\}\in\mathcal{F}$.
+
+$\bf Rmk$
+
+Any R.V. $X$ on $(\Omega,\mathcal{F},P)$ induces a probability measure $\mu$ on $(\mathbb{R},\mathcal{B})$: $\forall B\in\mathcal{B},\mu(B):=P(X\in A):=P(X^{-1}(A))$.
+
+<br/><br/>
+
+$\bf Def\ (Distribution\ function)$
+
+Given a R.V. $X$, define the distribution function $F:\mathbb{R}\to[0,1]$ as $F(x):=P(X\leq x)$.
+
+$\bf Thm\ 1.2.1$
+
+Any distribution function $F$ satisfies
+
+1. $F$ is increasing;
+2. $F(\infty)=1$, $F(-\infty)=0$;
+3. $\forall x\in\mathbb{R},F(x+)=F(x)$, i.e. $F$ is right continuous.
+4. $\forall x,\in\mathbb{R}F(x-)=F(x)$;
+5. $P(X=x)=F(x)-F(x-)$.
+
+$\bf Thm\ 1.2.2$
+
+If a function $F$ satisfies property 1-3 mentioned above, then $F$ is the distribution function of some random variable.
+
+> $\it Proof$
+>
+> Let $\Omega=(0,1)$, $\mathcal{F}=$ the Borel sets, $P=$ Lebesgue measure. $X:\Omega\to\mathbb{R}$ is defined as $X(w)=\sup\{y:F(y)<w\}$.
+>
+> It suffices to show $\{w:X(w)\leq x\}=\{w:w\leq F(x)\}$. In which case, apply $F$ on both sides and note that $P$ is the Lebesgue measure, we get $P(X\leq x)=F(x)$.
+>
+> If $w\in LHS$, then $X(w)=\sup\{y:F(y)<w\}\leq x$, i.e. $x$ is an upper boundary of $\{y:F(y)<w\}$. Suppose $w>F(x)$, since $F$ is right continuous, $\exists\varepsilon>0$ s.t. $F(x+\varepsilon)<w$, thus $x+\varepsilon\in\sup\{y:F(y)<w\}\Rightarrow x+\varepsilon\leq x$. Contradiction. Hence $w\leq F(x)$, $w\in RHS$.
+>
+> If $w\in RHS$, i.e. $w\leq F(x)$. Since $F$ is increasing, $\forall z\geq x, F(z)\geq w$, $z\notin\{y:F(y)<w\}$. Hence $X(w)=\sup\{y:F(y)<w\}\leq x$, $w\in LHS$.
