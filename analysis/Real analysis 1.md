@@ -163,8 +163,7 @@ then $\mu^\ast$ is an outer measure.
 > $$
 \begin{aligned}
 \mu^\ast\left(\bigcup_{j=1}^{\infty}A_j\right)\leq \sum_{j,k=1}^{\infty}\rho(E_{j,k})\leq\sum_{j=1}^{\infty}\mu^\ast (A_j)+\frac{\varepsilon}{2^j}=\sum_{j=1}^{\infty}\mu^\ast (A_j)+\varepsilon
-\end{aligned}
-> $$
+\end{aligned}$$
 > 
 > Let $\varepsilon\to0$, $\mu^\ast(\bigcup_{j=1}^\infty A_j)\leq\sum_{j=1}^\infty\mu^\ast(A_j)$.
 
