@@ -276,7 +276,7 @@ $\bf Rmk$
 
 $\mu$ may not be a complete measure on $\mathcal{M}$. By Caratheodory's theorem, $\mu$ is a complete measure on $\{\mu^\ast\text{-measurable sets}\}$. But in general, $\mathcal{M}=\sigma(\mathcal{A})\subset\{\mu^\ast\text{-measurable sets}\}$.
 
----
+<br/><br/>
 
 ## 1.5 Borel measures on $\mathbb{R}$
 
@@ -359,4 +359,4 @@ $\bf Rmk$
 
 ### 1.5.3 Regularity properties of L-S measures (TBD)
 
----
+<br/><br/>
