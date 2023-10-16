@@ -1,5 +1,5 @@
 - [Chapter 1 Measures](#chapter-1-measures)
-  - [1.2 sigma algebras](#12-sigma-algebras)
+  - [1.2 Sigma algebras](#12-sigma-algebras)
     - [1.2.1 The Borel sigma algebra](#121-the-borel-sigma-algebra)
     - [1.2.2 Product sigma algebras](#122-product-sigma-algebras)
   - [1.3 Measures](#13-measures)
@@ -23,7 +23,7 @@ Ref:
 
 # Chapter 1 Measures
 
-## 1.2 sigma algebras
+## 1.2 Sigma algebras
 
 Let $X$ be a non-empty set.
 
