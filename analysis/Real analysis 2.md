@@ -7,6 +7,8 @@
     - [2.2.1 Non-negative simple functions](#221-non-negative-simple-functions)
     - [2.2.2 Non-negative measurable functions](#222-non-negative-measurable-functions)
   - [2.3 Integration of complex functions](#23-integration-of-complex-functions)
+    - [2.3.1 The space Tilde $L^1$](#231-the-space-tilde-l1)
+    - [2.3.2 The space $L^1$](#232-the-space-l1)
 
 Ref:
 
@@ -166,11 +168,11 @@ If $f_1\leq f_2\leq\dots$ are in $L^+$ and $f=\lim_{n\to\infty}f_n$, then $\lim_
 =(1-\varepsilon)\int\varphi.$$
 > Send $\varepsilon\to0$, then $\lim_{n\to\infty}\int f_n\geq\int\varphi$. Take supremum, then $\lim_{n\to\infty}\int f_n\geq\int f$.
 
-$\bf Cor$
+<!-- $\bf Cor$
 
-By Theorem 2.10, there exist simple functions $0\leq\varphi_1\leq\varphi_2\leq\dots$ such that $f=\lim_{n\to\infty}\varphi_n$. Hence by MCT, $\int f=\lim_{n\to\infty}\int\varphi_n$. Likewise, $\int_E f=\lim_{n\to\infty}\int_E\varphi_n$ for any $E\in\mathcal{M}$.
+By Theorem 2.10, there exist simple functions $0\leq\varphi_1\leq\varphi_2\leq\dots$ such that $f=\lim_{n\to\infty}\varphi_n$. Hence by MCT, $\int f=\lim_{n\to\infty}\int\varphi_n$. Likewise, $\int_E f=\lim_{n\to\infty}\int_E\varphi_n$ for any $E\in\mathcal{M}$. -->
 
-$\bf Thm\ 2.15$
+$\bf Thm\ 2.15\ (Termwise\ integration)$
 
 If $\{f_n\}\subset L^+$, then $\int\sum_{n=1}^{\infty}f_n=\sum_{n=1}^{\infty}\int f_n$.
 
@@ -184,6 +186,8 @@ Let $f,g\in L^+$.
 2. $\int(f+g)=\int f+\int g$.
 3. If $f\leq g$, then $\int f\leq\int g$.
 4. Let $\lambda(E)=\int_E fd\mu$, then $\lambda$ is a measure on $\mathcal{M}$. Moreover, $\int gd\lambda=\int fgd\mu$.
+5. (Prop 2.16) $\int f=0$ if and only if $f=0$ a.e..
+6. (Prop 2.20) If $\int<\infty$, then $\{x:f(x)=\infty\}$ is a null set, and $\{x:f(x)>0\}$ is $\sigma$-finite.
 
 > $\it Proof$
 >
@@ -204,12 +208,10 @@ Let $f,g\in L^+$.
 > Then
 > $$
 \int fgd\mu=\lim\int f\varphi_nd\mu=\lim\int \varphi_nd\lambda=\int gd\lambda.$$
-
-<br/><br/>
-
-$\bf Prop\ 2.16$
-
-If $f\in L^+$, then $\int f=0$ if and only if $f=0$ a.e..
+> 
+> (5) $(\Rightarrow)$ Note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$. Use Chebyshev's inequality to show $\mu(\{x:f>0\})=0$. $(\Leftarrow)$ it is obviously true when $f$ is a non-negative simple function. Then approximate general $f\in L^+$ by simple functions.
+>
+> (6) For the first assertion, note that $\{x:f=\infty\}=\bigcup_{k=1}^\infty\{x:f>k\}$. Use Chebyshev's inequality to show $\mu(\{x:f=\infty\})=0$. For the second assertion, note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$ and use Chebyshev's inequality to show every $\mu(\{x:f>\frac{1}{k}\})<\infty$.
 
 <br/><br/>
 
@@ -224,4 +226,67 @@ If $\{f_n\}\subset L^+$, then $\int\liminf_{n\to\infty}f_n\leq\liminf_{n\to\inft
 <br/><br/>
 
 ## 2.3 Integration of complex functions
+
+### 2.3.1 The space Tilde $L^1$
+
+Fix a measure space $(X,\mathcal{M},\mu)$. Let $L^+$ denote the set of measurable functions $f:X\to[0,\infty]$.
+
+$\bf Def$
+
+1. A measurable function $f:X\to\mathbb{R}$ is **integrable** if $\int|f|<\infty$. In this case, we define $\int f=\int f^+-\int f^-$.
+2. A measurable function $f:X\to\mathbb{C}$ is **integrable** if $\int|f|<\infty$. In this case, we define $\int f=\int\mathrm{Re}f-i\int\mathrm{Im}f$.
+
+$\bf Def$
+
+Note that the set of integrable $\mathbb{R}$-valued (resp. $\mathbb{C}$-valued) functions on $X$ is a $\mathbb{R}$ (resp. $\mathbb{C}$) vector space. Define $\widetilde{L}^1(X,\mathcal{M},\mu)$ to be the vector space of integrable $\mathbb{C}$-valued functions on $X$. We write $\widetilde{L}^1$ instead when the context is clear.
+
+<br/><br/>
+
+$\bf Prop$
+
+Let $f,g\in\widetilde{L}^1$.
+
+1. (Prop 2.21) If $c\geq 0$, then $\int cf=c\int f$.
+2. (Prop 2.21) $\int(f+g)=\int f+\int g$.
+3. (Prop 2.22) $|\int f|\leq\int|f|$.
+4. (Prop 2.23) $\{x:f(x)\neq0\}$ is $\sigma$-finite.
+5. (Prop 2.23) TFAE.
+   1. $\int_E f=\int_E g$ for all $E\in\mathcal{M}$.
+   2. $\int|f-g|=0$.
+   3. $f=g$ a.e..
+
+> $\it Proof$
+>
+> (3) Fix $z\in\mathbb{C}$ with $|z|=1$ and $|\int f|=z\int f$.
+>
+> (4) Note that $\{x:f\neq 0\}=\{x:|f|\neq 0\}$. Use Prop 2.20 since $|f|\in L^+$.
+>
+> (5) $(ii\Leftrightarrow iii)$ follows from Prop 2.16. $(ii\Rightarrow i)$ follows from (1). $(i\Rightarrow ii)$ Let $u=\mathrm{Re}(f-g)$, $v=\mathrm{Im}(f-g)$. Let $E^\pm=\{x:u^\pm>0\}$, $F^\pm=\{x:v^\pm>0\}$. Then
+> $$
+\begin{aligned}
+\int|f-g|
+&\leq\int|u|+|v|=\int u^++u^-+v^++v^-\\
+&=\int_{E^+} u^++\int_{E^-}u^-+\int_{F^+}v^++\int_{F^-}v^-\\
+&=\int_{E^+} u-\int_{E^-}u+\int_{F^+}v-\int_{F^-}v\\
+&=\mathrm{Re}\left(\int_{E^+}(f-g)-\int_{E^-}(f-g)\right)\\
+&+\mathrm{Im}\left(\int_{E^+}(f-g)-\int_{E^-}(f-g)\right)=0.
+\end{aligned}$$
+
+<br/><br/>
+
+### 2.3.2 The space $L^1$
+
+$\bf Def$
+
+Define an equivalence class on $\widetilde L^1$ by $f\sim g\Leftrightarrow f=g$ a.e., and define $L^1(X,\mathcal{M},\mu)=\widetilde L^1/\sim$. We write $L^1$ instead when the context is clear. It follows that $L^1$ is a $\mathbb{C}$ vector space with operations
+
+$$
+[f]+[g]=[f+g]\quad\text{and}\quad c[f]=[cf].
+$$
+
+Note that the integral $\int[f]=\int f$ is well-defined and linear on $L^1$, by Prop 2.23, $\rho([f],[g])=\int|f-g|.$ is a well-defined distance on $L^1$. Later we will show $\rho$ is complete, hence **$L^1$ is a Banach space.**
+
+(From now on, we just write $f$ to mean the equivalence class of $f$ in $L^1$ for convenience.) A sequence $\{f_n\}$ in $L^1$ **converges in $L^1$** to $f\in L^1$ if $\int|f_n-f|\to0$.
+
+<br/><br/>
 
