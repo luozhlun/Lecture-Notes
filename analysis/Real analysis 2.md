@@ -1,14 +1,26 @@
 - [Chapter 2 Integration](#chapter-2-integration)
   - [2.1 Measurable functions](#21-measurable-functions)
-    - [2.1.1 Real/Complex-valued Functions](#211-realcomplex-valued-functions)
+    - [2.1.1 Real/Complex-valued functions](#211-realcomplex-valued-functions)
     - [2.1.2 Simple Functions](#212-simple-functions)
     - [2.1.3 Complete Measures](#213-complete-measures)
+  - [2.2 Integration of non-negative functions](#22-integration-of-non-negative-functions)
+    - [2.2.1 Non-negative simple functions](#221-non-negative-simple-functions)
+    - [2.2.2 Non-negative measurable functions](#222-non-negative-measurable-functions)
+  - [2.3 Integration of complex functions](#23-integration-of-complex-functions)
+
+Ref:
+
+1. [Real Variable Function Ch.1 Set Theory](https://zhuanlan.zhihu.com/p/473263173)
+2. [Real Variable Function Ch.2 Lebesgue Measure](https://zhuanlan.zhihu.com/p/487435847)
+3. [Real Variable Function Ch.3 Measurable Function](https://zhuanlan.zhihu.com/p/493842948)
+4. [Real Variable Function Ch.4 The Lebesgue Integration](https://zhuanlan.zhihu.com/p/513296172)
+5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/524968471)
 
 # Chapter 2 Integration
 
 ## 2.1 Measurable functions
 
-### 2.1.1 Real/Complex-valued Functions
+### 2.1.1 Real/Complex-valued functions
 
 $\bf Def\ (Extended\ real\ line)$
 
@@ -95,3 +107,121 @@ Let $(X,\mathcal{M},\mu)$ be a measure space, then TFAE.
 3. If $\{f_n\}$ are measurable and $f_n\to f$ a.e., then $f$ is measurable.
 
 <br/><br/>
+
+## 2.2 Integration of non-negative functions
+
+Fix a measure space $(X,\mathcal{M},\mu)$. Let $L^+$ denote the set of measurable functions $f:X\to[0,\infty]$.
+
+### 2.2.1 Non-negative simple functions
+
+$\bf Def$
+
+If $\varphi\in L^+$ is a simple function, define $\int\varphi d\mu=\sum_{j=1}^{n}a_j\mu(E_j)$ where $\varphi=\sum_{j=1}^{n}a_j\chi_{E_j}$ is the standard representation of $\varphi$. Sometimes we write $\int\varphi$ as a shorthand of $\int\varphi d\mu$ if it is clear from the context. Given $A\in\mathcal{M}$, note that $\varphi\chi_A$ is a simple function, we define $\int_A\varphi=\int\varphi\chi_A$
+
+$\bf Prop\ 2.13$
+
+Let $\varphi,\psi\in L^+$ be simple functions.
+
+1. If $c\geq 0$, then $\int c\varphi=c\int\varphi$.
+2. $\int(\varphi+\psi)=\int\varphi+\int\psi$.
+3. If $\varphi\leq\psi$, then $\int\varphi\leq\int\psi$.
+4. Let, $\lambda(A)\mapsto\int_A\varphi d\mu$, then $\lambda$ is a measure on $\mathcal{M}$.
+
+> $\it Proof$
+>
+> (4) $\lambda(\varnothing)=\int_\varnothing\varphi=0$. Suppose $A_1,A_2,\dots\in\mathcal{M}$ are disjoint. Then
+> $$
+\begin{aligned}
+\lambda\left(\bigcup_{k=1}^\infty A_k\right)
+&=\int\sum_{j=1}^{n}a_j\chi_{E_j}\chi_{\bigcup_{k=1}^\infty A_k}d\mu
+=\int\sum_{j=1}^{n}a_j\chi_{\bigcup_{k=1}^\infty(E_j\cap A_k)}d\mu\\
+&=\sum_{j=1}^{n}a_j\mu\left(\bigcup_{k=1}^\infty(E_j\cap A_k)\right)
+=\sum_{k=1}^{\infty}\sum_{j=1}^{n}a_j\mu\left(E_j\cap A_k\right)
+=\sum_{k=1}^{\infty}\lambda(A_k).
+\end{aligned}$$ 
+
+<br/><br/>
+
+### 2.2.2 Non-negative measurable functions
+
+$\bf Def$
+
+If $f\in L^+$, define $\int fd\mu=\sup\{\int\varphi d\mu:0\leq\varphi\leq f,\varphi\text{ simple}\}$. Note that the definition of the integration of simples functions coincides, it is well-defined.
+
+<br/><br/>
+
+$\bf Thm\ 2.14\ (Monotone\ convergence\ theorem, MCT)$
+
+If $f_1\leq f_2\leq\dots$ are in $L^+$ and $f=\lim_{n\to\infty}f_n$, then $\lim_{n\to\infty}\int f_n=\int f$.
+
+> $\it Proof$
+>
+> ($\geq$) Fix $\varphi$ simple with $0\leq\varphi\leq f$. Fix $\varphi>0$. Let $E_n=\{x:f_n(x)\geq(1-\varepsilon)\varphi(x)\}$. Then $E_1\subset E_2\subset\dots$ and $\bigcup_{n=1}^{\infty}E_n=X$. Also,
+> $$\int f_n\geq\int_{E_n}f_n\geq(1-\varepsilon)\int_{E_n}\varphi.$$
+> Since $E\mapsto\int_E\varphi$ is a measure,
+> $$
+\lim_{n\to\infty}\int f_n
+\geq(1-\varepsilon)\lim_{n\to\infty}\int_{E_n}\varphi
+=(1-\varepsilon)\int_{\bigcup_{n=1}^{\infty}E_n}\varphi
+=(1-\varepsilon)\int\varphi.$$
+> Send $\varepsilon\to0$, then $\lim_{n\to\infty}\int f_n\geq\int\varphi$. Take supremum, then $\lim_{n\to\infty}\int f_n\geq\int f$.
+
+$\bf Cor$
+
+By Theorem 2.10, there exist simple functions $0\leq\varphi_1\leq\varphi_2\leq\dots$ such that $f=\lim_{n\to\infty}\varphi_n$. Hence by MCT, $\int f=\lim_{n\to\infty}\int\varphi_n$. Likewise, $\int_E f=\lim_{n\to\infty}\int_E\varphi_n$ for any $E\in\mathcal{M}$.
+
+$\bf Thm\ 2.15$
+
+If $\{f_n\}\subset L^+$, then $\int\sum_{n=1}^{\infty}f_n=\sum_{n=1}^{\infty}\int f_n$.
+
+<br/><br/>
+
+$\bf Prop$
+
+Let $f,g\in L^+$.
+
+1. If $c\geq 0$, then $\int cf=c\int f$.
+2. $\int(f+g)=\int f+\int g$.
+3. If $f\leq g$, then $\int f\leq\int g$.
+4. Let $\lambda(E)=\int_E fd\mu$, then $\lambda$ is a measure on $\mathcal{M}$. Moreover, $\int gd\lambda=\int fgd\mu$.
+
+> $\it Proof$
+>
+> (4) $\lambda(\varnothing)=0$. Suppose $A_1,A_2,\dots\in\mathcal{M}$ are disjoint. Then by Theorem 2.15
+> $$
+\begin{aligned}
+\lambda\left(\bigcup_{k=1}^\infty A_k\right)
+&=\int\chi_{\bigcup_{k=1}^\infty A_k}fd\mu
+=\int\sum_{k=1}^{\infty}\chi_{A_k}fd\mu\\
+&=\sum_{k=1}^{\infty}\int\chi_{A_k}fd\mu
+=\sum_{k=1}^{\infty}\lambda(A_k).
+\end{aligned}$$
+> Hence $\lambda$ is indeed a measure. For the second assertion, first check the case when $g$ a non-negative simple function. And then approximate general $g\in L^+$ by increasing non-negative simple functions $\{\varphi_n\}$. Then $fg_n\uparrow fg$. Use MCT twice, then
+> $$
+\int\varphi_nd\lambda\to\int gd\lambda
+\quad\text{and}\quad
+\int f\varphi_nd\mu\to\int fgd\mu.$$
+> Then
+> $$
+\int fgd\mu=\lim\int f\varphi_nd\mu=\lim\int \varphi_nd\lambda=\int gd\lambda.$$
+
+<br/><br/>
+
+$\bf Prop\ 2.16$
+
+If $f\in L^+$, then $\int f=0$ if and only if $f=0$ a.e..
+
+<br/><br/>
+
+$\bf Thm\ 2.18\ (Fatou's\ Lemma)$
+
+If $\{f_n\}\subset L^+$, then $\int\liminf_{n\to\infty}f_n\leq\liminf_{n\to\infty}\int f_n$.
+
+> $\it Proof$
+>
+> Use $\liminf_{n\to\infty}f_n=\lim_{n\to\infty}\inf_{k\geq n}f_k$ with MCT.
+
+<br/><br/>
+
+## 2.3 Integration of complex functions
+
