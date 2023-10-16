@@ -8,7 +8,7 @@
   - [1.4 Outer measures](#14-outer-measures)
     - [1.4.1 Outer measure restricts to measure](#141-outer-measure-restricts-to-measure)
     - [1.4.2 Premeasure extents to outer measure](#142-premeasure-extents-to-outer-measure)
-  - [1.5 Borel measures on $\\mathbb{R}$](#15-borel-measures-on-mathbbr)
+  - [1.5 Borel measures on real line](#15-borel-measures-on-real-line)
     - [1.5.1 Lebesgue-Stieltjes measures](#151-lebesgue-stieltjes-measures)
     - [1.5.2 Invariance of Lebesgue measure (TBD)](#152-invariance-of-lebesgue-measure-tbd)
     - [1.5.3 Regularity properties of L-S measures (TBD)](#153-regularity-properties-of-l-s-measures-tbd)
@@ -278,7 +278,7 @@ $\mu$ may not be a complete measure on $\mathcal{M}$. By Caratheodory's theorem,
 
 <br/><br/>
 
-## 1.5 Borel measures on $\mathbb{R}$
+## 1.5 Borel measures on real line
 
 ### 1.5.1 Lebesgue-Stieltjes measures
 
