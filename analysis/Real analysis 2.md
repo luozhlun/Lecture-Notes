@@ -10,6 +10,8 @@
     - [2.3.1 The space Tilde $L^1$](#231-the-space-tilde-l1)
     - [2.3.2 The space $L^1$](#232-the-space-l1)
   - [2.4 Modes of convergence](#24-modes-of-convergence)
+    - [2.4.1 Convergences](#241-convergences)
+    - [2.4.2 Relations between different convergence](#242-relations-between-different-convergence)
 
 Ref:
 
@@ -187,8 +189,9 @@ Let $f,g\in L^+$.
 2. $\int(f+g)=\int f+\int g$.
 3. If $f\leq g$, then $\int f\leq\int g$.
 4. Let $\lambda(E)=\int_E fd\mu$, then $\lambda$ is a measure on $\mathcal{M}$. Moreover, $\int gd\lambda=\int fgd\mu$.
-5. (Prop 2.16) $\int f=0$ if and only if $f=0$ a.e..
-6. (Prop 2.20) If $\int<\infty$, then $\{x:f(x)=\infty\}$ is a null set, and $\{x:f(x)>0\}$ is $\sigma$-finite.
+5. (Chebyshev's inequality) If $\varepsilon>0$ and $p>0$, then $\mu(\{x:f>\varepsilon\})\leq{\varepsilon^{-p}}\int f^p$.
+6. (Prop 2.16) $\int f=0$ if and only if $f=0$ a.e..
+7. (Prop 2.20) If $\int<\infty$, then $\{x:f(x)=\infty\}$ is a null set, and $\{x:f(x)>0\}$ is $\sigma$-finite.
 
 > $\it Proof$
 >
@@ -209,10 +212,12 @@ Let $f,g\in L^+$.
 > Then
 > $$
 \int fgd\mu=\lim\int f\varphi_nd\mu=\lim\int \varphi_nd\lambda=\int gd\lambda.$$
-> 
-> (5) $(\Rightarrow)$ Note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$. Use Chebyshev's inequality to show $\mu(\{x:f>0\})=0$. $(\Leftarrow)$ it is obviously true when $f$ is a non-negative simple function. Then approximate general $f\in L^+$ by simple functions.
 >
-> (6) For the first assertion, note that $\{x:f=\infty\}=\bigcup_{k=1}^\infty\{x:f>k\}$. Use Chebyshev's inequality to show $\mu(\{x:f=\infty\})=0$. For the second assertion, note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$ and use Chebyshev's inequality to show every $\mu(\{x:f>\frac{1}{k}\})<\infty$.
+> (5) Integrate both sides of $\varepsilon^p\chi_{f>\varepsilon}\leq f^p$.
+> 
+> (6) $(\Rightarrow)$ Note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$. Use Chebyshev's inequality to show $\mu(\{x:f>0\})=0$. $(\Leftarrow)$ it is obviously true when $f$ is a non-negative simple function. Then approximate general $f\in L^+$ by simple functions.
+>
+> (7) For the first assertion, note that $\{x:f=\infty\}=\bigcup_{k=1}^\infty\{x:f>k\}$. Use Chebyshev's inequality to show $\mu(\{x:f=\infty\})=0$. For the second assertion, note that $\{x:f>0\}=\bigcup_{k=1}^\infty\{x:f>\frac{1}{k}\}$ and use Chebyshev's inequality to show every $\mu(\{x:f>\frac{1}{k}\})<\infty$.
 
 <br/><br/>
 
@@ -345,15 +350,65 @@ Moreover, if $X=\mathbb{R}$ and $\mu$ is a L-S measure, then we may assume that 
 
 ## 2.4 Modes of convergence
 
-Fix a measure space $(X,\mathcal{M},\mu)$.
+### 2.4.1 Convergences
+
+Fix a measure space $(X,\mathcal{M},\mu)$. Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions. Let $f$ be a $\mathbb{C}$-valued measurable function.
 
 $\bf Def\ (Convergence\ in\ measure)$
 
-Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions.
-
-1. Say $\{f_n\}$ is **Cauchy in measure** if for every $\varepsilon>0$, $\lim_{m,n\to\infty}\mu(\{x:|f_m(x)-f_n(x)|\geq\varepsilon\})=0$.
-2. Say $f_n\to f$ **in measure** if for every $\varepsilon>0$, $\lim_{n\to\infty}\mu(\{x:|f(x)-f_n(x)|\geq\varepsilon\})=0$
+1. $\{f_n\}$ is **Cauchy in measure** if for every $\varepsilon>0$, $\lim_{m,n\to\infty}\mu(\{x:|f_m(x)-f_n(x)|\geq\varepsilon\})=0$.
+2. $f_n\to f$ **in measure** if for every $\varepsilon>0$, $\lim_{n\to\infty}\mu(\{x:|f(x)-f_n(x)|\geq\varepsilon\})=0$
 
 $\bf Prop\ (Uniqueness\ of\ limit\ function)$
 
-Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions. If $f_n\to f$ and $f_n\to g$ both in measure an
+Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions. If $f_n\to f$ and $f_n\to g$ both in measure, then $f=g$ a.e..
+
+> $\it Proof$
+>
+> Let $E_m=\{x:|f-g|>\frac{1}{m}\}$. Then $E_m\subset\{x:|f-f_n|>\frac{1}{2m}\}\cup\{x:|g-f_n|>\frac{1}{2m}\}$ for all $n$. Hence $\mu(E_m)=0$.
+
+<br/><br/>
+
+$\bf Def\ (Almost\ uniform\ convergence)$
+
+If for every $\varepsilon>0$, there exists $E\in\mathcal{E}$ such that $\mu(E)<\varepsilon$ and $f_n\to f$ uniformly on $E^c$, we say $f_n\to f$ **almost uniformly**.
+
+$\bf Prop\ (almost\ uniformly\Rightarrow measure,\ a.e.)$
+
+If $f_n\to f$ almost uniformly, then $f_n\to f$ in measure and $f_n\to f$ a.e..
+
+> $\it Proof$
+>
+> (1) Fix $\varepsilon>0$. There is $E\in\mathcal{M}$ and $N\geq 1$ such that $\mu(E)<\varepsilon$ and $|f_n-f|<\varepsilon$ for every $x\in E^c$ and $n\geq N$. Hence whenever $n\geq N$, $\mu(\{x:|f_n-f|\geq\varepsilon\})\leq\mu(E)<\varepsilon$.
+>
+> (2) Choose $E_n$ with $\mu(E_n)<\frac{1}{n}$ by the definition of almost uniform convergence and let $F=\bigcap_{n=1}^\infty E_n$.
+
+<br/><br/>
+
+### 2.4.2 Relations between different convergence
+
+![](figures/Modes%20of%20convergence.png)
+
+$\bf Prop\ 2.29\ (L^1 \Rightarrow measure)$
+
+If $f_n\to f$ in $L^1$, then $f_n\to f$ in measure.
+
+> $\it Proof$
+>
+> It follows from Chebyshev's inequality.
+
+<br/><br/>
+
+$\bf Thm\ 2.30$
+
+$\{f_n\}$ is Cauchy in measure if and only if there is a measurable function $f$ such that $f_n\to f$ in measure. Moreover, there is a subsequence $\{f_{n_j}\}$ such that $f_{n_j}\to f$ a.e..
+
+> $\it Proof$
+>
+> Omit.
+
+<br/><br/>
+
+$\bf Thm\ 2.33\ (Egorov's\ theorem)$
+
+Suppose $\mu(X)<\infty$. If $f_n\to f$ a.e., then $f_n\to f$ almost uniformly. Hence $f_n\to f$ in measure.
