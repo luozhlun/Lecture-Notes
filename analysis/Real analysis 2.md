@@ -230,7 +230,7 @@ If $\{f_n\}\subset L^+$, then $\int\liminf_{n\to\infty}f_n\leq\liminf_{n\to\inft
 
 ### 2.3.1 The space Tilde $L^1$
 
-Fix a measure space $(X,\mathcal{M},\mu)$. Let $L^+$ denote the set of measurable functions $f:X\to[0,\infty]$.
+Fix a measure space $(X,\mathcal{M},\mu)$.
 
 $\bf Def$
 
@@ -260,7 +260,7 @@ Let $f,g\in\widetilde{L}^1$.
 >
 > (3) Fix $z\in\mathbb{C}$ with $|z|=1$ and $|\int f|=z\int f$.
 >
-> (4) Note that $\{x:f\neq 0\}=\{x:|f|\neq 0\}$. Use Prop 2.20 since $|f|\in L^+$.
+> (4) Note that $\{x:f\neq 0\}=\{x:|f|\neq 0\}$. It follows from Prop 2.20 and $|f|\in L^+$.
 >
 > (5) $(ii\Leftrightarrow iii)$ follows from Prop 2.16. $(ii\Rightarrow i)$ follows from (1). $(i\Rightarrow ii)$ Let $u=\mathrm{Re}(f-g)$, $v=\mathrm{Im}(f-g)$. Let $E^\pm=\{x:u^\pm>0\}$, $F^\pm=\{x:v^\pm>0\}$. Then
 > $$
@@ -285,7 +285,9 @@ $$
 [f]+[g]=[f+g]\quad\text{and}\quad c[f]=[cf].
 $$
 
-Note that the integral $\int[f]=\int f$ is well-defined and linear on $L^1$, by Prop 2.23, $\rho([f],[g])=\int|f-g|.$ is a well-defined distance on $L^1$. Later we will show $\rho$ is complete, hence **$L^1$ is a Banach space.**
+Note that the integral $\int[f]=\int f$ is well-defined and linear on $L^1$, by Prop 2.23, $\rho([f],[g])=\int|f-g|.$ is a well-defined distance on $L^1$. Later we will show $\rho$ is complete, hence **$L^1$ is a Banach space.** From now on, we just write $f$ to mean the equivalence class of $f$ in $L^1$ for convenience.
+
+$\bf Def\ (Convergence\ in\ L^1)$
 
 (From now on, we just write $f$ to mean the equivalence class of $f$ in $L^1$ for convenience.) A sequence $\{f_n\}$ in $L^1$ **converges in $L^1$** to $f\in L^1$ if $\int|f_n-f|\to0$.
 
@@ -293,7 +295,7 @@ Note that the integral $\int[f]=\int f$ is well-defined and linear on $L^1$, by 
 
 $\bf Prop$
 
-Let $(X,\overline{\mathcal{M}},\overline{\mu})$ be the completion of $(X,\mathcal{M},\mu)$. Then $\widetilde{L}^1(X,\mathcal{M},\mu)\subset\widetilde{L}^1(X,\overline{\mathcal{M}},\overline{\mu})$ and the inclusion map descends to a bijection $F:L^1(X,\mathcal{M},\mu)\to L^1(X,\overline{\mathcal{M}},\overline{\mu})$. Moreover $f$ is a homeomorphism。
+Let $(X,\overline{\mathcal{M}},\overline{\mu})$ be the completion of $(X,\mathcal{M},\mu)$. Then $\widetilde{L}^1(X,\mathcal{M},\mu)\subset\widetilde{L}^1(X,\overline{\mathcal{M}},\overline{\mu})$ and the inclusion map descends to a bijection $F:L^1(X,\mathcal{M},\mu)\to L^1(X,\overline{\mathcal{M}},\overline{\mu})$. Moreover $f$ is a homeomorphism.
 
 > $\it Proof$
 >
@@ -307,7 +309,7 @@ Since $L^1(X,\mathcal{M},\mu)$ and $L^1(X,\overline{\mathcal{M}},\overline{\mu})
 
 $\bf Thm\ 2.24\ (Dominated\ convergence\ theorem)$
 
-If $\{f_n\}\subset L^1$, $f_n\to f$ a.e. and $|f_n|\leq g$ a.e. for some $g\in L^1$ for all $n$, then $f\in L^1$ and $\lim_{n\to\infty}\int f_n=\int f$. Moreover, $\{f_n\}$ converges to $f$ in $L^1$.
+If $\{f_n\}\subset L^1$, $f_n\to f$ a.e. and $|f_n|\leq g$ a.e. for some $g\in L^1$ for all $n$, then $f\in L^1$ and $\lim_{n\to\infty}\int f_n=\int f$. Moreover, $f_n\to f$ in $L^1$.
 
 > $\it Proof$
 >
@@ -342,3 +344,16 @@ Moreover, if $X=\mathbb{R}$ and $\mu$ is a L-S measure, then we may assume that 
 <br/><br/>
 
 ## 2.4 Modes of convergence
+
+Fix a measure space $(X,\mathcal{M},\mu)$.
+
+$\bf Def\ (Convergence\ in\ measure)$
+
+Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions.
+
+1. Say $\{f_n\}$ is **Cauchy in measure** if for every $\varepsilon>0$, $\lim_{m,n\to\infty}\mu(\{x:|f_m(x)-f_n(x)|\geq\varepsilon\})=0$.
+2. Say $f_n\to f$ **in measure** if for every $\varepsilon>0$, $\lim_{n\to\infty}\mu(\{x:|f(x)-f_n(x)|\geq\varepsilon\})=0$
+
+$\bf Prop\ (Uniqueness\ of\ limit\ function)$
+
+Let $\{f_n\}$ be a sequence of $\mathbb{C}$-valued measurable functions. If $f_n\to f$ and $f_n\to g$ both in measure an
