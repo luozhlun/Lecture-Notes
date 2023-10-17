@@ -9,6 +9,7 @@
   - [2.3 Integration of complex functions](#23-integration-of-complex-functions)
     - [2.3.1 The space Tilde $L^1$](#231-the-space-tilde-l1)
     - [2.3.2 The space $L^1$](#232-the-space-l1)
+  - [2.4 Modes of convergence](#24-modes-of-convergence)
 
 Ref:
 
@@ -154,7 +155,7 @@ If $f\in L^+$, define $\int fd\mu=\sup\{\int\varphi d\mu:0\leq\varphi\leq f,\var
 
 $\bf Thm\ 2.14\ (Monotone\ convergence\ theorem, MCT)$
 
-If $f_1\leq f_2\leq\dots$ are in $L^+$ and $f=\lim_{n\to\infty}f_n$, then $\lim_{n\to\infty}\int f_n=\int f$.
+If $f_1\leq f_2\leq\dots$ are in $L^+$ and $f=\lim_{n\to\infty}f_n$, then $f\in L^+$ and $\lim_{n\to\infty}\int f_n=\int f$.
 
 > $\it Proof$
 >
@@ -290,3 +291,54 @@ Note that the integral $\int[f]=\int f$ is well-defined and linear on $L^1$, by 
 
 <br/><br/>
 
+$\bf Prop$
+
+Let $(X,\overline{\mathcal{M}},\overline{\mu})$ be the completion of $(X,\mathcal{M},\mu)$. Then $\widetilde{L}^1(X,\mathcal{M},\mu)\subset\widetilde{L}^1(X,\overline{\mathcal{M}},\overline{\mu})$ and the inclusion map descends to a bijection $F:L^1(X,\mathcal{M},\mu)\to L^1(X,\overline{\mathcal{M}},\overline{\mu})$. Moreover $f$ is a homeomorphism。
+
+> $\it Proof$
+>
+> Omit.
+
+$\bf Rmk$
+
+Since $L^1(X,\mathcal{M},\mu)$ and $L^1(X,\overline{\mathcal{M}},\overline{\mu})$ are homeomorphic, from now on we always assume $\mu$ is complete.
+
+<br/><br/>
+
+$\bf Thm\ 2.24\ (Dominated\ convergence\ theorem)$
+
+If $\{f_n\}\subset L^1$, $f_n\to f$ a.e. and $|f_n|\leq g$ a.e. for some $g\in L^1$ for all $n$, then $f\in L^1$ and $\lim_{n\to\infty}\int f_n=\int f$. Moreover, $\{f_n\}$ converges to $f$ in $L^1$.
+
+> $\it Proof$
+>
+> Since $\mu$ is complete, $f$ is measurable by Prop 2.11. Also $|f|\leq g$ a.e. and hence $\int |f|\leq\int g<\infty$. So $f\in L^+$.
+>
+> By taking real and imaginary parts, we may assume $f_n$ and $f$ are real-valued. Then $g+f_n\geq 0$ a.e. and $g-f_n\geq 0$ a.e.. Apply Fatou's lemma to finish the proof.
+>
+> For the last assertion, apply DCT to $f_n-f\to0$ since $|f_n-f|\leq 2|f|\in L^1$.
+
+<br/><br/>
+
+$\bf Thm\ 2.25$
+
+Suppose $\{f_n\}\subset L^1$ and $\sum_n\int|f_n|<\infty$. Then $\sum_n f_n$ converges a.e. to a function in $L^1$ and $\int\sum_n f_n=\sum_n\int f_n$.
+
+$\bf Rmk$
+
+It implies that the norm $\|f\|=\int|f|$ on $L^1$ is complete. Hence $L^1$ is a Banach space. (See Exercise 1.4.7 and Exercise 1.2.2 of Zhang Gongqing’s “Lecture Notes on Functional Analysis”)
+
+<br/><br/>
+
+$\bf Thm\ 2.26$
+
+If $f\in L^1$ and $\varepsilon>0$, then there is an integrable simple function $\varphi=\sum a_j\chi_{E_j}$ such that $\int|f-\varepsilon|d\mu<\varepsilon$. Hence integrable simple functions are dense in $L^1$.
+
+Moreover, if $X=\mathbb{R}$ and $\mu$ is a L-S measure, then we may assume that each $E_j$ is a finite union of bounded open intervals. In addition, there is a continuous function $g$ with bounded support such that $\int|f-g|d\mu$.
+
+> $\it Proof$
+>
+> Omit.
+
+<br/><br/>
+
+## 2.4 Modes of convergence
