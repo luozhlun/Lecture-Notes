@@ -37,6 +37,7 @@ Pandoc option:
 4. [Real Variable Function Ch.4 The Lebesgue Integration](https://zhuanlan.zhihu.com/p/513296172)
 5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/524968471)
 6. [Real Analysis Ch.1 Measures](analysis/Real%20analysis%201.md)
+7. [Real Analysis Ch.2 Integration](analysis/Real%20analysis%202.md)
 
 #### Complex Analysis
 
@@ -65,6 +66,7 @@ Pandoc option:
 5. [基础概率论 第五章 极限定理](https://zhuanlan.zhihu.com/p/529804865)
 6. [数理统计](statistics/数理统计笔记.md)
 7. [Probability Ch.1 Measure Theory](statistics/Probability%201.md)
+8. [Probability Ch.2 Laws of Large Numbers](statistics/Probability%202.md)
 
 ## Geometry
 
