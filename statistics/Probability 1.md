@@ -3,11 +3,11 @@
   - [1.1 Probability space](#11-probability-space)
     - [1.1.1 Algebra](#111-algebra)
     - [1.1.2 Measures](#112-measures)
-    - [1.1.3 Lebesgue-Stieltjes measures](#113-lebesgue-stieltjes-measures)
+    - [1.1.3 Lebesgue-Stieltjes Measures](#113-lebesgue-stieltjes-measures)
   - [1.2 Distributions](#12-distributions)
     - [1.2.1 Distributions](#121-distributions)
-    - [1.2.2 Distribution functions](#122-distribution-functions)
-    - [1.2.3 Density functions](#123-density-functions)
+    - [1.2.2 Distribution Functions](#122-distribution-functions)
+    - [1.2.3 Density Functions](#123-density-functions)
   - [1.3 Random Variables](#13-random-variables)
 
 
@@ -74,7 +74,7 @@ $\Omega$ countable, $\mathcal{F}=2^\Omega$. Suppose we have a function $P:\Omega
 
 <br/><br/>
 
-### 1.1.3 Lebesgue-Stieltjes measures
+### 1.1.3 Lebesgue-Stieltjes Measures
 
 $\bf Def\ (Stieltjes\ functions)$
 
@@ -112,7 +112,7 @@ $$
 
 <br/><br/>
 
-### 1.2.2 Distribution functions
+### 1.2.2 Distribution Functions
 
 $\bf Def\ (Distribution\ functions)$
 
@@ -164,7 +164,7 @@ Suppose $X,Y$ are r.v.s, then TFAE.
 
 <br/><br/>
 
-### 1.2.3 Density functions
+### 1.2.3 Density Functions
 
 $\bf Def\ (Density\ functions)$
 

@@ -1,17 +1,17 @@
 - [Chapter 2 Integration](#chapter-2-integration)
-  - [2.1 Measurable functions](#21-measurable-functions)
-    - [2.1.1 Real/Complex-valued functions](#211-realcomplex-valued-functions)
+  - [2.1 Measurable Functions](#21-measurable-functions)
+    - [2.1.1 Real/Complex-valued Functions](#211-realcomplex-valued-functions)
     - [2.1.2 Simple Functions](#212-simple-functions)
     - [2.1.3 Complete Measures](#213-complete-measures)
-  - [2.2 Integration of non-negative functions](#22-integration-of-non-negative-functions)
-    - [2.2.1 Non-negative simple functions](#221-non-negative-simple-functions)
-    - [2.2.2 Non-negative measurable functions](#222-non-negative-measurable-functions)
-  - [2.3 Integration of complex functions](#23-integration-of-complex-functions)
-    - [2.3.1 The space Tilde $L^1$](#231-the-space-tilde-l1)
-    - [2.3.2 The space $L^1$](#232-the-space-l1)
-  - [2.4 Modes of convergence](#24-modes-of-convergence)
+  - [2.2 Integration of Non-negative Functions](#22-integration-of-non-negative-functions)
+    - [2.2.1 Non-negative Simple Functions](#221-non-negative-simple-functions)
+    - [2.2.2 Non-negative Measurable Functions](#222-non-negative-measurable-functions)
+  - [2.3 Integration of Complex Functions](#23-integration-of-complex-functions)
+    - [2.3.1 The Space Tilde $L^1$](#231-the-space-tilde-l1)
+    - [2.3.2 The Space $L^1$](#232-the-space-l1)
+  - [2.4 Modes of Convergence](#24-modes-of-convergence)
     - [2.4.1 Convergences](#241-convergences)
-    - [2.4.2 Relations between different convergence](#242-relations-between-different-convergence)
+    - [2.4.2 Relations Between Different Convergence](#242-relations-between-different-convergence)
 
 Ref:
 
@@ -23,9 +23,9 @@ Ref:
 
 # Chapter 2 Integration
 
-## 2.1 Measurable functions
+## 2.1 Measurable Functions
 
-### 2.1.1 Real/Complex-valued functions
+### 2.1.1 Real/Complex-valued Functions
 
 $\bf Def\ (Extended\ real\ line)$
 
@@ -113,11 +113,11 @@ Let $(X,\mathcal{M},\mu)$ be a measure space, then TFAE.
 
 <br/><br/>
 
-## 2.2 Integration of non-negative functions
+## 2.2 Integration of Non-negative Functions
 
 Fix a measure space $(X,\mathcal{M},\mu)$. Let $L^+$ denote the set of measurable functions $f:X\to[0,\infty]$.
 
-### 2.2.1 Non-negative simple functions
+### 2.2.1 Non-negative Simple Functions
 
 $\bf Def$
 
@@ -147,7 +147,7 @@ Let $\varphi,\psi\in L^+$ be simple functions.
 
 <br/><br/>
 
-### 2.2.2 Non-negative measurable functions
+### 2.2.2 Non-negative Measurable Functions
 
 $\bf Def$
 
@@ -170,10 +170,6 @@ If $f_1\leq f_2\leq\dots$ are in $L^+$ and $f=\lim_{n\to\infty}f_n$, then $f\in 
 =(1-\varepsilon)\int_{\bigcup_{n=1}^{\infty}E_n}\varphi
 =(1-\varepsilon)\int\varphi.$$
 > Send $\varepsilon\to0$, then $\lim_{n\to\infty}\int f_n\geq\int\varphi$. Take supremum, then $\lim_{n\to\infty}\int f_n\geq\int f$.
-
-<!-- $\bf Cor$
-
-By Theorem 2.10, there exist simple functions $0\leq\varphi_1\leq\varphi_2\leq\dots$ such that $f=\lim_{n\to\infty}\varphi_n$. Hence by MCT, $\int f=\lim_{n\to\infty}\int\varphi_n$. Likewise, $\int_E f=\lim_{n\to\infty}\int_E\varphi_n$ for any $E\in\mathcal{M}$. -->
 
 $\bf Thm\ 2.15\ (Termwise\ integration)$
 
@@ -231,9 +227,9 @@ If $\{f_n\}\subset L^+$, then $\int\liminf_{n\to\infty}f_n\leq\liminf_{n\to\inft
 
 <br/><br/>
 
-## 2.3 Integration of complex functions
+## 2.3 Integration of Complex Functions
 
-### 2.3.1 The space Tilde $L^1$
+### 2.3.1 The Space Tilde $L^1$
 
 Fix a measure space $(X,\mathcal{M},\mu)$.
 
@@ -280,7 +276,7 @@ Let $f,g\in\widetilde{L}^1$.
 
 <br/><br/>
 
-### 2.3.2 The space $L^1$
+### 2.3.2 The Space $L^1$
 
 $\bf Def$
 
@@ -348,7 +344,7 @@ Moreover, if $X=\mathbb{R}$ and $\mu$ is a L-S measure, then we may assume that 
 
 <br/><br/>
 
-## 2.4 Modes of convergence
+## 2.4 Modes of Convergence
 
 ### 2.4.1 Convergences
 
@@ -385,7 +381,7 @@ If $f_n\to f$ almost uniformly, then $f_n\to f$ in measure and $f_n\to f$ a.e..
 
 <br/><br/>
 
-### 2.4.2 Relations between different convergence
+### 2.4.2 Relations Between Different Convergence
 
 ![](figures/Modes%20of%20convergence.png)
 
