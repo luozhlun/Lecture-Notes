@@ -93,13 +93,13 @@ Let $\{X_i\}_{i\in I}$ be a family of r.v.s with $EX_i^2<\infty$. They are said 
 
 $\bf Thm\ 2.2.1$
 
-Let $X_1,\dots,X_n$ be uncorrelated r.v.s, then $Var(\sum_{i=1}^{n}X_i)=\sum_{i=1}^{\infty}Var(X_i)$.
+Let $X_1,\dots,X_n$ be uncorrelated, then $Var(\sum_{i=1}^{n}X_i)=\sum_{i=1}^{\infty}Var(X_i)$.
 
 <br/><br/>
 
 $\bf Thm\ 2.2.3 (L^2\ weak\ law\ of\ large\ number)$
 
-Let $X_1,X_2,\dots$ be uncorrelated r.v.s with $EX_i=\mu$ and $VarX_i\leq C<\infty$. Then $S_n/n\to\mu$ in $L^2$.
+Let $X_1,X_2,\dots$ be uncorrelated with $EX_i=\mu$ and $VarX_i\leq C<\infty$. Then $S_n/n\to\mu$ in $L^2$.
 
 > $\it Proof$
 >
@@ -154,7 +154,7 @@ Then $\dfrac{S_n-a_n}{b_n}\to 0$ in probability, where $a_n=\sum_{k=1}^{n}E\over
 > Let $\overline S_n=\sum_{k=1}^{n}\overline X_{n,k}$. Note that
 > $$
 P\left(\left|\frac{S_n-a_n}{b_n}\right|>\varepsilon\right)\leq P(S_n\neq\overline S_n)+P\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right).$$
-> Note that
+> Note that as $n\to\infty$,
 > $$
 P(S_n\neq\overline S_n)\leq P\left(\bigcup_{k=1}^{n}\{X_{n,k}\neq\overline X_{n,k}\}\right)\leq\sum_{k=1}^{n}P(|X_{n,k}|>b_n)\to 0,$$
 > and
@@ -190,3 +190,74 @@ xP(|X_i|>x)=E(x1_{|X_i|>x})\leq E(|X_i|1_{|X_i|>x})\to 0.$$
 <br/><br/>
 
 ## 2.3 Borel-Cantelli Lemmas
+
+$\bf Def\ (infinitely\ often)$
+
+Given a sequence of events $\{A_n\}_{n=1}^{\infty}$, define
+
+$$
+\begin{aligned}
+A_n\  i.o.
+&:=\{w:w\text{ is in infinite many }A_n\}\\
+&\phantom{:}=\limsup_{n\to\infty}A_n=\bigcap_{m=1}^{\infty}\bigcup_{m=n}^{\infty}A_m.
+\end{aligned}
+$$
+
+$\bf Thm\ 2.3.1\ (Borel-Cantelli\ lemma)$
+
+If $\sum_{n=1}^{\infty}P(A_n)<\infty$, then $P(A_n\ i.o.)=0$.
+
+> $\it Proof$
+>
+> Let $N=\sum_{k=1}^{\infty}1_{A_k}$ and note that $EN=\sum_{n=1}^{\infty}P(A_n)<\infty$. Hence $N<\infty$ a.s..
+
+<br/><br/>
+
+$\bf Thm\ 2.3.2$
+
+$X_n\to X$ in probability if and only if every subsequence of $X_n$ has a further subsequence that converges to $X$ a.s..
+
+> $\it Proof$
+>
+> $(\Rightarrow)$ For any $k\geq 1$, there exists $n_k>n_{k-1}$ such that $P(|X_{n_k}-X|>\frac{1}{k})\leq\frac{1}{2^k}$. By BC, $P(|X_{n_k}-X|>\frac{1}{k}\ i.o.)=0$. Then $\forall\varepsilon>0$, $P(|X_{n_k}-X|>\varepsilon\ i.o.)=0$, and hence $X_{n_k}\to X$ a.s..
+> 
+> $(\Leftarrow)$ Fact: number sequence $y_n\to t$ if and only if every subsequence $y_n$ has a further subsequence $y_{n_{k_l}}$ that converges to $y$. Now choose $y_n:=P\{|X_n-X|>\varepsilon\}$ for fixed $\varepsilon>0$.
+
+$\bf Cor\ 2.3.4$
+
+Suppose $f:\mathbb{R}\to\mathbb{R}$ is continuous and $X_n\to X$ in probability.
+
+1. $f(X_n)\to f(X)$ in probability.
+2. If, in addition, $f$ is bounded, then by BCT, $Ef(X_n)\to Ef(X)$.
+
+<br/><br/>
+
+$\bf Thm\ 2.3.5\ (Strong\ law\ of\ large\ number)$
+
+Let $X_1,X_2,\dots$ be i.i.d. with $EX_i=\mu$ and $EX_i^4<\infty$. Let $S_n=\sum_{k=1}^{n}X_{n,k}$, Then $S_n/n\to\mu$ a.s..
+
+> $\it Proof$
+>
+> WLOG, assume $\mu=0$. Note that, $\sum_{n=1}^{\infty}P(|S_n|>n\varepsilon)<\infty$ implies $P(|\frac{S_n}{n}|>\varepsilon\ i.o.)=0$ by BC. And by Chebyshev's inequality $P(|S_n|>n\varepsilon)\leq\frac{ES_n^4}{n^4\varepsilon^4}$ it suffices to show $ES_n^4\leq Cn^2$ for some constant $C$.
+> $$
+ES_n^4=E(X_1+\dots+X_n)^4=\sum_{i,j,k,l}EX_iX_jX_kX_l.
+$$
+> Note that only the terms like $EX_i^4$ and $EX_i^2X_j^2$ don't vanish since $EX_i=0$, so we deduce
+> $$
+ES_n^4=\sum_{i,j,k,l}EX_iX_jX_kX_l=nEX_i^4+3n(n-1)(EX_i^2)^2\leq Cn^2.$$
+
+<br/><br/>
+
+$\bf Thm\ 2.3.7\ (Second\ Borel-Cantelli\ lemma)$
+
+If $A_n$ are independent and $\sum_{n=1}^{\infty}P(A_n)=\infty$, then $P(A_n\ i.o.)=1$.
+
+> $\it Proof$
+>
+> By continuity from below, it suffices to show $P(\bigcup_{n=M}^{\infty}A_n)\to 1$ as $M\to\infty$. And it suffices to show $P(\bigcap_{n=M}^{\infty}A_n^c)\to 0$ as $M\to\infty$. Since $A_n$ are independent,
+> $$
+\begin{aligned}
+P\left(\bigcap_{n=M}^{N}A_n^c\right)
+&=\prod_{n=M}^{N}P(A_n^c)=\prod_{n=M}^{N}(1-P(A_n))\\
+&\leq\prod_{n=M}^{N}\exp(-P(A_n))=\exp\left(-\sum_{n=M}^{N}P(A_n)\right)\to 0.
+\end{aligned}$$
