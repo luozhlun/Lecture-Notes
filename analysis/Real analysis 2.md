@@ -184,7 +184,7 @@ Let $f,g\in L^+$.
 1. If $c\geq 0$, then $\int cf=c\int f$.
 2. $\int(f+g)=\int f+\int g$.
 3. If $f\leq g$, then $\int f\leq\int g$.
-4. Let $\lambda(E)=\int_E fd\mu$, then $\lambda$ is a measure on $\mathcal{M}$. Moreover, $\int gd\lambda=\int fgd\mu$.
+4. (EX 2.14) Let $\lambda(E)=\int_E fd\mu$, then $\lambda$ is a measure on $\mathcal{M}$. Moreover, $\int gd\lambda=\int fgd\mu$.
 5. (Chebyshev's inequality) If $\varepsilon>0$ and $p>0$, then $\mu(\{x:f>\varepsilon\})\leq{\varepsilon^{-p}}\int f^p$.
 6. (Prop 2.16) $\int f=0$ if and only if $f=0$ a.e..
 7. (Prop 2.20) If $\int<\infty$, then $\{x:f(x)=\infty\}$ is a null set, and $\{x:f(x)>0\}$ is $\sigma$-finite.
