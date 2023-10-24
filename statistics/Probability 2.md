@@ -134,7 +134,7 @@ If $Y\geq 0$ and $p>0$, then $E(Y^p)=\int_0^\infty py^{p-1}P(Y>y)dy$.
 $\bf Thm\ 2.2.11\ (Weak\ law\ of\ large\ number\ for\ triangular\ arrays)$
 
 $$
-\begin{array}{cc}
+\begin{array}{cccc}
 X_{11}&&&\\
 X_{21}&X_{22}&&\\
 \vdots&\vdots&\ddots&\\
