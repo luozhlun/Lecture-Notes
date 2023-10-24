@@ -19,12 +19,12 @@ $\bf Def\ (Independence)$
 
 1. **Events** $A_1,\dots,A_n$ are independent if $\forall I\subset\{1,2,\dots,n\}$, $P(\bigcap_{i\in I}A_i)=\prod_{i\in I}P(A_i)$.
 2. **R.v.s** $X_1,\dots,X_n$ are independent if $\forall B_i\in\mathcal{B}$, $P(\bigcap_{i=1}^n\{X_i\in B_i\})=\prod_{i=1}^nP(X_i\in B_i)$.
-3. **$\sigma$-fields** $\mathcal{F_1},\dots,\mathcal{F_n}$ are independent if $\forall A_i\in\mathcal{F_i}$, $P(\bigcap_{i=1}^nA_i)=\prod_{i=1}^nP(A_i)$.
+3. **$\sigma$-fields** $\mathcal{F}_1,\dots,\mathcal{F}_n$ are independent if $\forall A_i\in\mathcal{F}_i$, $P(\bigcap_{i=1}^nA_i)=\prod_{i=1}^nP(A_i)$.
 
 $\bf Thm\ 2.1.1$
 
 1. If $X_1,\dots,X_n$ are independent r.v.s, then $\sigma(X_1),\dots,\sigma(X_n)$ are independent $\sigma$-fields.
-2. If $\mathcal{F_1},\dots,\mathcal{F_n}$ are independent $\sigma$-fields, then $\forall X_i\in\mathcal{F_i}$, $X_1,\dots,X_n$ are independent r.v.s.
+2. If $\mathcal{F}_1,\dots,\mathcal{F}_n$ are independent $\sigma$-fields, then $\forall X_i\in\mathcal{F}_i$, $X_1,\dots,X_n$ are independent r.v.s.
 
 Hence $X_1,\dots,X_n$ are independent r.v.s if and only if $\sigma(X_1),\dots,\sigma(X_n)$ are independent $\sigma$-fields.
 

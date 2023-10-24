@@ -25,7 +25,7 @@ Assume $\Omega$ is a set. $\mathcal{F}\subset\mathcal{P}(\Omega)$ is non-empty.
    1. $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F}$
    2. finitely many $A_i\in\mathcal{F}\Rightarrow \bigcup_iA_i\in\mathcal{F}$
 2. $\mathcal{F}$ is called a **$\sigma$-algebra** on $\Omega$ if
-   1. $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F  }$
+   1. $A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F}$
    2. countably many $A_i\in\mathcal{F}\Rightarrow \bigcup_iA_i\in\mathcal{F}$
 
 $\bf Rmk$
