@@ -38,6 +38,7 @@ Pandoc option:
 5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/524968471)
 6. [Real Analysis Ch.1 Measures](analysis/Real%20analysis%201.md)
 7. [Real Analysis Ch.2 Integration](analysis/Real%20analysis%202.md)
+7. [Real Analysis Ch.3 Signed Measures and Differentiation](analysis/Real%20analysis%203.md)
 
 #### Complex Analysis
 
