@@ -229,7 +229,7 @@ In this section, we consider the Lebesgue measure $m$ on $\mathbb{R}^n$.
 
 $\bf Lem$
 
-If $x$ is a continuous point of $f:\mathbb{R}^n\to\mathbb{C}$, then
+If $f:\mathbb{R}^n\to\mathbb{C}$ is continuous, then
 
 $$
 f(x)=\lim_{r\to 0}\frac{1}{mB(x,r)}\int_{B(x,r)}f(y)dy.
