@@ -7,6 +7,10 @@
     - [3.2.2 The L-R-N Theorem](#322-the-l-r-n-theorem)
 - [3.3 Complex Measures](#33-complex-measures)
 - [3.4 Differentiation on Euclidean Spaces](#34-differentiation-on-euclidean-spaces)
+  - [3.4.1 The Average Value Function](#341-the-average-value-function)
+  - [3.4.2 The Maximal Function](#342-the-maximal-function)
+  - [3.4.3 Differentiation Theorem](#343-differentiation-theorem)
+  - [3.4.4 Some Applications](#344-some-applications)
 
 # Chapter 3 Signed Measures and Differentiation
 
@@ -150,7 +154,7 @@ $$
 
 $\bf Def\ (Complex\ Measures)$
 
-Let $(X,\mathcal{M})$ be a measurable space. A **complex measure** on $(X,\mathcal{M})$ is a function $\nu:\mathcal{M}\to \mathbb{C}$ such that
+Let $(X,\mathcal{M})$ be a measurable space. A **complex measure** on $(X,\mathcal{M})$ is a function $\nu:\mathcal{M}\to\mathbb{C}$ such that
 
 1. $\nu(\varnothing)=0$.
 2. If $\{E_j\}\subset\mathcal{M}$ are disjoint, then $\nu(\bigcup_{j=1}^{\infty}E_j)=\sum_{j=1}^{\infty}\nu(E_j)$.
@@ -221,3 +225,126 @@ If $\nu_1$ and $\nu_2$ are complex measures, then $|\nu_1+\nu_2|\leq|\nu_1|+|\nu
 
 # 3.4 Differentiation on Euclidean Spaces
 
+In this section, we consider the Lebesgue measure $m$ on $\mathbb{R}^n$.
+
+$\bf Lem$
+
+If $x$ is a continuous point of $f:\mathbb{R}^n\to\mathbb{C}$, then
+
+$$
+f(x)=\lim_{r\to 0}\frac{1}{mB(x,r)}\int_{B(x,r)}f(y)dy.
+$$
+
+<br/><br/>
+
+## 3.4.1 The Average Value Function
+
+$\bf Def\ (Locally\ integrable)$
+
+A measurable function $f:\mathbb{R}^n\to\mathbb{C}$ is **locally integrable** if $\int_K|f(x)|dx<\infty$ for every bounded measurable set $K\subset\mathbb{R}^n$. Let $L_\mathrm{loc}^1$ denote the set of locally integrable functions.
+
+Given $f\in L_\mathrm{loc}^1$, $x\in\mathbb{R}^n$ and $r>0$, we define
+
+$$
+A_rf(x)=\frac{1}{mB(x,r)}\int_{B(x,r)}f(y)dy.
+$$
+
+$\bf Lem\ 3.16$
+
+If $f\in L_\mathrm{loc}^1$, then $A_rf(x)$ as a function of $(r,x)\in\mathbb{R}^+\times\mathbb{R}^n\to \mathbb{R}$ is continuous.
+
+<br/><br/>
+
+## 3.4.2 The Maximal Function
+
+$\bf Def$
+
+Given $f\in L_\mathrm{loc}^1$, the **Hardy-Littlewood maximal function** is
+
+$$
+Hf(x)=\sup_{r>0}A_r|f|(x)=\sup_{r>0}\frac{1}{mB(x,r)}\int_{B(x,r)}|f(y)|dy
+$$
+
+Clearly, $Hf:\mathbb{R}^n\to[0,\infty]$ is measurable, since $(Hf)^{-1}(a,\infty]=\bigcup_{r>0}(A_r|f|)^{-1}(a,\infty)$.
+
+<br/><br/>
+
+$\bf Thm\ 3.17\ (The\ Maximal\ Theorem)$
+
+There is a constant $c>0$ such that for all $f\in L^1$ and all $\alpha>0$,
+
+$$
+m(\{x:Hf(x)>\alpha\})\leq\frac{c}{\alpha}\int|f(x)|dx.
+$$
+
+<br/><br/>
+
+## 3.4.3 Differentiation Theorem
+
+$\bf Def\ (Lebesgue\ Set)$
+
+Given $f\in L_\mathrm{loc}^1$, the **Lebesgue set** of $f$ is
+
+$$
+L_f=\left\{x:\lim_{r\to0}\frac{1}{mB(x,r)}\int_{B(x,r)}|f(y)-f(x)|dy=0\right\}.
+$$
+
+Clearly, if $x\in L_f$, then $\lim_{r\to0}A_rf(x)=f(x)$.
+
+$\bf Def\ (Shrinking\ Nicely)$
+
+A family $\{E_r\}_{r>0}$ of Borel sets in $\mathbb{R}^n$ shrink nicely to $x\in \mathbb{R}^n$ if
+
+1. $E_r\subset B(x,r)$ for all $r>0$.
+2. There is $\alpha>0$ such that $m(E_r)>\alpha mB(x,r)$ for all $r>0$.
+
+<br/><br/>
+
+$\bf Thm\ 3.18/3.20/3.21\ (The\ Lebesgue\ Differentiation\ Theorem)$
+
+1. [Theorem 3.18] If $f\in L_\mathrm{loc}^1$, then $\lim_{r\to0}A_rf(x)=f(x)$ for a.e. $x\in \mathbb{R}^n$.
+2. [Theorem 3.20] If $f\in L_\mathrm{loc}^1$, then $m(L_f^c)=0$.
+3. [Theorem 3.21 The Lebesgue Differentiation Theorem]
+
+Suppose that $f\in L_\mathrm{loc}^1$. For every $x\in L_f$ and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
+
+$$
+\begin{aligned}
+&\lim_{r\to 0}\frac{1}{m(E_r)}\int_{E_r}|f(y)-f(x)|dy=0,\\
+&\lim_{r\to 0}\frac{1}{m(E_r)}\int_{E_r}f(y)dy=f(x).
+\end{aligned}
+$$
+
+<br/><br/>
+
+## 3.4.4 Some Applications
+
+$\bf Def\ (Regular\ Measures)$
+
+A positive Borel measure $\nu$ on $\mathbb{R}^n$ is **regular** if
+
+1. $\nu(K)<\infty$ for every compact set $K\subset \mathbb{R}^n$.
+2. $\nu(E)=\inf\{\nu(U):U\text{ open }, E\subset U\}$ for every Borel set $E$.
+
+A signed or complex Borel measure $\nu$ on $\mathbb{R}^n$ is **regular** if $|\nu|$ is regular.
+
+$\bf Rmk$
+
+1. In Folland Section 7.2, we will show (1) implies (2).
+2. Every regular measure is $\sigma$-finite.
+
+<br/><br/>
+
+$\bf Lem$
+
+If $f\in L^+(\mathbb{R}^n,m)$ and $d\nu=fdm$, then $\nu$ is regular if and only if $f\in L_\mathrm{loc}^1$.
+
+<br/><br/>
+
+$\bf Thm\ 3.22$
+
+Let $\nu$ be a regular signed or complex Borel measure on $\mathbb{R}^n$ and let $d\nu=d\lambda+fdm$ be the Lebesgue decomposition w.r.t. $m$. Then for $m$-a.e. $x\in \mathbb{R}^n$, and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
+
+$$
+\lim_{r\to 0}\frac{v(E_r)}{m(E_r)}=f(x).
+$$
