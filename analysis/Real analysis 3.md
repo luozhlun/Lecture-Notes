@@ -12,7 +12,7 @@
 
 ## 3.1 Signed Measures
 
-$\bf Def$
+$\bf Def\ (Signed\ Measures)$
 
 Let $(X,\mathcal{M})$ be a measurable space. A **signed measure** on $(X,\mathcal{M})$ is a function $\nu:\mathcal{M}\to[-\infty,\infty]$ such that
 
@@ -46,7 +46,7 @@ Let $\nu$ be a signed measure, then there exist a positive set $P$ and a negativ
 
 ### 3.1.2 Jordan Decomposition
 
-$\bf Def$
+$\bf Def\ (Mutually\ Singular)$
 
 Two signed measures $\mu$ and $\nu$ on $(X,\mathcal{M})$ are **mutually singular**, denoted by $\mu\perp\nu$, if there exist $E,F\in\mathcal{M}$ such that $X=E\sqcup F$ such that $E$ is $\mu$-null and $F$ is $\nu$-null.
 
@@ -54,10 +54,16 @@ Two signed measures $\mu$ and $\nu$ on $(X,\mathcal{M})$ are **mutually singular
 
 $\bf Thm/Def\ 3.4\ (Jordan\ Decomposition)$
 
-Let $\nu$ be a signed measure, then there exist unique positive measures $\nu^+$ and $\nu^-$ on $\mathcal{M}$ such that $\nu=\nu^+-\nu^-$ and $\nu^+\perp\nu^-$. The $\nu^+$, $\nu^-$ are called the **positive, negative variations** of $\nu$. And $\nu=\nu^+-\nu^-$ is called the **Jordan decomposition** of $\nu$. Then **total variation** of $\nu$ is $|\nu|=\nu^++\nu^-$.
+Let $\nu$ be a signed measure, then there exist unique positive measures $\nu^+$ and $\nu^-$ on $\mathcal{M}$ such that $\nu=\nu^+-\nu^-$ and $\nu^+\perp\nu^-$. The $\nu^+$, $\nu^-$ are called the **positive, negative variations** of $\nu$. And $\nu=\nu^+-\nu^-$ is called the **Jordan decomposition** of $\nu$. Then **total variation** of $\nu$ is $|\nu|=\nu^++\nu^-$. Let $L^1(\nu)=L^1(\nu^+)\cap L^1(\nu^-)$ and for $f\in L^1(\nu)$ define $\int fd\nu=\int fd\nu^+-\int fd\nu^-$.
 
-1. Let $L^1(\nu)=L^1(\nu^+)\cap L^1(\nu^-)$ and for $f\in L^1(\nu)$ define $\int fd\nu=\int fd\nu^+-\int fd\nu^-$.
-2. We say $\nu$ is **finite** (respectively **$\sigma$-finite**) if $|\nu|$ is finite (respectively $\sigma$-finite). Clearly, $\nu$ is finite (i.e. $|\nu|(X)<\infty$) if and only if $\nu$ omits $\infty$ and $-\infty$ values.
+> $\it Proof$
+>
+> (Existence) Let $X=P\sqcup N$ be a Hahn decomposition of $nu$. Define positive measures $\nu^+(E)=\nu(E\cap P)$ and $\nu^-(E)=-\nu(E\cap N)$.
+>
+> (Uniqueness) If there is another pair $\mu^+$ and $\mu^-$. Since they are mutually singular, there exist $P',N'\in\mathcal{M}$ such that $X=P'\sqcup N'$, $P'$ is $\mu^-$-null and $N'$ is $\mu^+$-null. Since $\nu=\nu^+-\nu^-$, $P'$ is positive and $N'$ is negative for $\nu$. So $X=P'\sqcup N'$ is also a Hahn decomposition of $\nu$. So $\nu(P'\bigtriangleup P)=0$. Then
+> $$
+\mu^+(E)=\mu^+(E\cap P')=\nu(E\cap P')=\nu(E\cap P)=\nu^+(E).$$
+> and likewise $\mu^-=\nu^-$.   
 
 <br/><br/>
 
@@ -65,8 +71,8 @@ $\bf Prop$
 
 Let $\nu$ be a signed measure on $(X,\mathcal{M})$. 
 
-1. $E$ is $\nu$-null $\Leftrightarrow$ $|\nu|(E)=0$.
-2. $\nu\perp\mu$ $\Leftrightarrow$ $|\nu|\perp\mu$ $\Leftrightarrow$ $\nu^+\perp\mu$ and $\nu^-\perp\mu$.
+1. [Exercise 3.1.2] $E$ is $\nu$-null $\Leftrightarrow$ $|\nu|(E)=0$.
+2. [Exercise 3.1.2] $\nu\perp\mu$ $\Leftrightarrow$ $|\nu|\perp\mu$ $\Leftrightarrow$ $\nu^+\perp\mu$ and $\nu^-\perp\mu$.
 3. $L^1(\nu)=L^1(|\nu|)$, and if $f\in L^1(\nu)$, then $|\int fd\nu|\leq\int |f|d|\nu|$.
 
 <br/><br/>
@@ -82,6 +88,8 @@ Suppose $\nu$ is a signed measure and $\mu$ is a positive measure on $(X,\mathca
 <br/><br/>
 
 $\bf Prop$
+
+Suppose $\nu$ is a signed measure and $\mu$ is a positive measure on $(X,\mathcal{M})$. 
 
 1. $\nu\ll\mu$ and $\nu\perp\mu$ $\Leftrightarrow$ $\nu\equiv0$
 2. $\nu\ll\mu$ $\Leftrightarrow$ $|\nu|\ll\mu$ $\Leftrightarrow$ $\nu^+\ll\mu$ and $\nu^-\ll\mu$.
@@ -122,7 +130,7 @@ In particular, if $\nu\ll\mu$, then clearly $\nu=0+\nu$ is the unique Lebesgue d
 
 $\bf Prop\ 3.9$
 
-Suppose $\nu$ is a $\sigma$-finite signed measure and $\mu$, $\lambda$ are $\sigma$-finite signed positive measures on $(X,\mathcal{M})$ such that $\nu\ll\mu\ll\lambda$.
+Suppose $\nu$ is a $\sigma$-finite signed measure and $\mu$, $\lambda$ are $\sigma$-finite positive measures on $(X,\mathcal{M})$ such that $\nu\ll\mu\ll\lambda$.
 
 1. If $g\in L^1(\nu)$, then $g\frac{d\nu}{d\mu}\in L^1(\mu)$ and
 
@@ -130,7 +138,7 @@ $$
 \int gd\nu=\int g\frac{d\nu}{d\mu}d\mu.
 $$
 
-2. $\nu\ll\lambda$ and for a.e. $x\in X$,
+2. $\nu\ll\lambda$ and for $\lambda$-a.e. $x\in X$,
 
 $$
 \frac{d\nu}{d\lambda}=\frac{d\nu}{d\mu}\frac{d\mu}{d\lambda}.
@@ -142,28 +150,36 @@ $$
 
 $\bf Def\ (Complex\ Measures)$
 
-A complex measure on $(X,mathcal{M})$ is a function $\nu:\mathcal{M}\to \mathbb{C}$ such that
+Let $(X,\mathcal{M})$ be a measurable space. A **complex measure** on $(X,\mathcal{M})$ is a function $\nu:\mathcal{M}\to \mathbb{C}$ such that
 
 1. $\nu(\varnothing)=0$.
 2. If $\{E_j\}\subset\mathcal{M}$ are disjoint, then $\nu(\bigcup_{j=1}^{\infty}E_j)=\sum_{j=1}^{\infty}\nu(E_j)$.
 
-Moreover, $\nu_r=\mathrm{Re}(\nu)$ and $\nu_i=\mathrm{Im}(\nu)$ are finite signed measures. Define $L^1(\nu)=L^1(\nu_r)\cap L^1(\nu_i)$ and for $f\in L^1(\nu)$ define $\int fd\nu=\int fd\nu_r+i\int fd\nu_i$.
+If $\nu$ is a complex measure, then $\nu_r=\mathrm{Re}(\nu)$ and $\nu_i=\mathrm{Im}(\nu)$ are finite signed measures. Define $L^1(\nu)=L^1(\nu_r)\cap L^1(\nu_i)$ and for $f\in L^1(\nu)$ define $\int fd\nu=\int fd\nu_r+i\int fd\nu_i$.
 
-$\bf Prop$
+$\bf Prop/Def$
 
-If $\mu$ is a positive measure and $f\in L^1(\mu)$, then $\nu(E)=\int_E fd\mu$ defines a complex measure. In this case, we write $d\nu=fd\mu$.
+Suppose that $\mu$ is a positive measure and $f\in L^1(\mu)$. Then $\nu(E)=\int_E fd\mu$ defines a complex measure. In this case, we write $d\nu=fd\mu$. Conversely, we write $d\nu=fd\mu$ if $\nu(E)=\int_E fd\mu$ for all $E\in\mathcal{M}$.
 
 <br/><br/>
 
 $\bf Thm\ 3.12\ (Lebesgue-Radon-Nikodym\ Theorem\ for\ Complex\ Measures)$
 
-Let $\nu$ be a complex measure and $\mu$ a $\sigma$-finite positive measure on $(X,\mathcal{M})$. Then there exists a unique complex measure $\lambda$ and a unique $f\in L^1(\mu)$ such that $d\nu=d\lambda+fd\mu$. Moreover, if $\nu\ll\mu$, then $f$ is denoted by $\frac{d\nu}{d\mu}$. In particular $\frac{d\nu}{d\mu}=\frac{d\nu_r}{d\mu}+i\frac{d\nu_i}{d\mu}$.
+Let $\nu$ be a complex measure and $\mu$ a $\sigma$-finite positive measure on $(X,\mathcal{M})$. Then there exists a unique complex measure $\lambda$ and a unique $f\in L^1(\mu)$ such that $d\nu=d\lambda+fd\mu$. Moreover, if $\nu\ll\mu$, then $f$ is denoted by $\frac{d\nu}{d\mu}$. In this case, $\frac{d\nu}{d\mu}=\frac{d\nu_r}{d\mu}+i\frac{d\nu_i}{d\mu}$.
+
+> $\it Proof$
+>
+> Apply L-R-N theorem to $\nu_r$ and $\nu_i$. There are unique $\sigma$-finite signed measures $\lambda_r,\lambda_i$ and $f_r,f_i\in L^1(\mu)$ such that $\lambda_r\perp\mu$, $\lambda_i\perp\mu$, $d\nu_r=d\lambda_r+f_rd\mu_r$ and $d\nu_i=d\lambda_i+f_id\mu_i$. Let $\lambda=\lambda_r+i\lambda_i$ and $f=f_r+if_i$, then $d\nu=d\lambda+fd\mu$. And clearly $\lambda\perp\mu$. 
+>
+> For uniqueness, take the real and imaginary parts and use L-R-N theorem, then one can show every parts will agree with the $\lambda_r,\lambda_i,f_r,f_i$ we chose before.  
+
+By taking real and imaginary parts of $\nu$, we can also show that Theorem 3.9 works if $\nu$ is a complex measure.
 
 <br/><br/>
 
 $\bf Prop/Def\ (Total\ Variation)$
 
-If $\nu$ is a complex measure, then there is a unique positive measure, denoted by $|\nu|$ and called the **total variation** of $\nu$, such that $d|\nu|=|\frac{d\nu}{d\mu}|d\mu$ whenever $\nu\ll\mu$ and $\mu$ is positive $\sigma$-finite. Moreover, if $\nu$ is real-valued, then $|\nu|=\nu^++\nu^-$.
+If $\nu$ is a complex measure, then there is a unique positive measure, denoted by $|\nu|$ and called the **total variation** of $\nu$, such that $d|\nu|=|\frac{d\nu}{d\mu}|d\mu$ whenever $\nu\ll\mu$ and $\mu$ is positive $\sigma$-finite. In particular, $\frac{d|\nu|}{d\mu}=|\frac{d\nu}{d\mu}|$. Moreover, if $\nu$ is real-valued, then $|\nu|=\nu^++\nu^-$.
 
 <br/><br/>
 
@@ -175,10 +191,33 @@ Let $\nu$ be a complex measure.
 2. $\nu\ll|\nu|$ and $|\frac{d\nu}{d|\nu|}|=1$ $|\nu|$-a.e.
 3. $L^1(\nu)=L^1(|\nu|)$, and if $f\in L^1(\nu)$, then $|\int fd\nu|\leq\int |f|d|\nu|$.
 
+> $\it Proof$
+>
+> (1) Fix $\mu=|\nu_r|+|\nu_i|$, then $\mu$ is a finite positive measure with $\nu\ll\mu$. Then
+> $$
+\left|\int_Ed\nu\right|=\left|\int_E\frac{d\nu}{d\mu}d\mu\right|
+\leq\int_E\left|\frac{d\nu}{d\mu}\right|d\mu=|\nu|(E).$$
+>
+> (2) Clearly $\nu\ll|\nu|\ll\mu$. Applying Theorem 3.9 (b), we have
+> $$
+\frac{d\nu}{d\mu}=\frac{d\nu}{d|\nu|}\frac{d|\nu|}{d\mu}
+=\frac{d\nu}{d|\nu|}\left|\frac{d\nu}{d\mu}\right|.$$
+> Taking absolute values, we obtain $\left|\frac{d\nu}{d\mu}\right|\left(\left|\frac{d\nu}{d|\nu|}\right|-1\right)=0$. Let $E=\{x:\frac{d\nu}{d\mu}(x)=0\}$. Note that
+> $$
+|\nu|(E)=\int_E\left|\frac{d\nu}{d\mu}\right|d\mu=0.$$
+> So $\frac{d\nu}{d\mu}=0$ $|\nu|$-a.e. and hence $\left|\frac{d\nu}{d|\nu|}\right|=1$ $|\nu|$-a.e..
+>
+> (3) See Math721 HW8 Problem 2: Folland, Section 3.3, Problem 18.
+
 $\bf Prop\ 3.14$
 
-If $\nu_1$ and $\nu_2$ are complex measures, then $|\nu_1+\nu_2|\leq|\nu_1|+|\nu_2|$
+If $\nu_1$ and $\nu_2$ are complex measures, then $|\nu_1+\nu_2|\leq|\nu_1|+|\nu_2|$.
+
+> $\it Proof$
+>
+> Consider $\mu=|\nu_1|+|\nu_2|$. Then $\nu_1,\nu_2\ll\mu$.
 
 <br/><br/>
 
 # 3.4 Differentiation on Euclidean Spaces
+
