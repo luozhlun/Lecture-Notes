@@ -223,6 +223,21 @@ If $\nu_1$ and $\nu_2$ are complex measures, then $|\nu_1+\nu_2|\leq|\nu_1|+|\nu
 
 <br/><br/>
 
+$\bf Prop$
+
+Let $E\in\mathcal{M}$, then $E$ is $\nu$-null if and only if $|\nu|(E)=0$.
+
+> $\it Proof$
+> 
+> Suppose that $|\nu|(E)=0$. If $F\in\mathcal{M}$ and $F\subset E$, then it follows from Folland Proposition 3.13 (a) that $|\nu(F)|\leq |\nu|(F)\leq|\nu|(E)=0$. So $\nu(F)=0$. Hence $E$ is $\nu$-null.
+> 
+> For the other direction, suppose that $E$ is $\nu$-null. Note that by Folland Proposition 3.13 (b), $\nu\ll|\nu|$. Let $f=\frac{d\nu}{d|\nu|}$. Then for arbitrary $A\in\mathcal{M}$,
+> $$
+0=\nu(A\cap E)=\int_{A\cap E}fd|\nu|=\int_A\chi_Efd|\nu|.$$
+> Since $|\nu|$ is a positive measure, by Folland Proposition 2.23 (b), $\chi_Ef=0$ $|\nu|$-a.e. Note that by Folland Proposition 3.13 (b), $|f|=1$ $|\nu|$-a.e.. It follows that $|\chi_E|=\frac{|\chi_Ef|}{|f|}=0$ $|\nu|-$a.e., and hence $|\nu|(E)=0$.
+
+<br/><br/>
+
 # 3.4 Differentiation on Euclidean Spaces
 
 In this section, we consider the Lebesgue measure $m$ on $\mathbb{R}^n$.
@@ -248,6 +263,16 @@ Given $f\in L_\mathrm{loc}^1$, $x\in\mathbb{R}^n$ and $r>0$, we define
 $$
 A_rf(x)=\frac{1}{mB(x,r)}\int_{B(x,r)}f(y)dy.
 $$
+
+<br/><br/>
+
+$\bf Lem\ 3.15$
+
+Let $\mathcal{C}$ be a collection of open balls in $\mathbb{R}^n$ and let $U=\bigcup_{B\in\mathcal{C}}B$. If $c<m(U)$, then there exist disjoint $B_1,\dots,B_k\in\mathcal{C}$ such that $\sum_{j=1}^{k}m(B_j)>\frac{c}{3^n}$.
+
+
+
+<br/><br/>
 
 $\bf Lem\ 3.16$
 
@@ -337,7 +362,11 @@ $\bf Rmk$
 
 $\bf Lem$
 
-If $f\in L^+(\mathbb{R}^n,m)$ and $d\nu=fdm$, then $\nu$ is regular if and only if $f\in L_\mathrm{loc}^1$.
+If $f\in L^+(\mathbb{R}^n)$ and $d\nu=fdm$, then $\nu$ is regular if and only if $f\in L_\mathrm{loc}^1$.
+
+> $\it Proof$
+>
+> $(\Rightarrow)$ If $E$ is bounded, then $\overline E$ is compact, and hence $\int_E fdm\leq\int_{\overline E}fdm=\nu(\overline E)<\infty$.
 
 <br/><br/>
 
