@@ -5,12 +5,26 @@
   - [3.2 Lebesgue-Radon-Nikodym Theorem](#32-lebesgue-radon-nikodym-theorem)
     - [3.2.1 Absolute continuity](#321-absolute-continuity)
     - [3.2.2 The L-R-N Theorem](#322-the-l-r-n-theorem)
-- [3.3 Complex Measures](#33-complex-measures)
-- [3.4 Differentiation on Euclidean Spaces](#34-differentiation-on-euclidean-spaces)
-  - [3.4.1 The Average Value Function](#341-the-average-value-function)
-  - [3.4.2 The Maximal Function](#342-the-maximal-function)
-  - [3.4.3 Differentiation Theorem](#343-differentiation-theorem)
-  - [3.4.4 Some Applications](#344-some-applications)
+  - [3.3 Complex Measures](#33-complex-measures)
+  - [3.4 Differentiation on Euclidean Spaces](#34-differentiation-on-euclidean-spaces)
+    - [3.4.1 The Average Value Function](#341-the-average-value-function)
+    - [3.4.2 The Maximal Function](#342-the-maximal-function)
+    - [3.4.3 Differentiation Theorem](#343-differentiation-theorem)
+    - [3.4.4 Some Applications](#344-some-applications)
+  - [3.5 Functions of Bounded Variation](#35-functions-of-bounded-variation)
+    - [3.5.1 Increasing Functions](#351-increasing-functions)
+    - [3.5.2 BV functions](#352-bv-functions)
+    - [3.5.3 Connections to Complex Measures](#353-connections-to-complex-measures)
+    - [3.5.4 Absolutely Continuous Functions](#354-absolutely-continuous-functions)
+    - [3.5.5 On Bounded Intervals](#355-on-bounded-intervals)
+
+Ref:
+
+1. [Real Variable Function Ch.1 Set Theory](https://zhuanlan.zhihu.com/p/473263173)
+2. [Real Variable Function Ch.2 Lebesgue Measure](https://zhuanlan.zhihu.com/p/487435847)
+3. [Real Variable Function Ch.3 Measurable Function](https://zhuanlan.zhihu.com/p/493842948)
+4. [Real Variable Function Ch.4 The Lebesgue Integration](https://zhuanlan.zhihu.com/p/513296172)
+5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/5249.68471)
 
 # Chapter 3 Signed Measures and Differentiation
 
@@ -150,7 +164,7 @@ $$
 
 <br/><br/>
 
-# 3.3 Complex Measures
+## 3.3 Complex Measures
 
 $\bf Def\ (Complex\ Measures)$
 
@@ -238,7 +252,7 @@ Let $E\in\mathcal{M}$, then $E$ is $\nu$-null if and only if $|\nu|(E)=0$.
 
 <br/><br/>
 
-# 3.4 Differentiation on Euclidean Spaces
+## 3.4 Differentiation on Euclidean Spaces
 
 In this section, we consider the Lebesgue measure $m$ on $\mathbb{R}^n$.
 
@@ -252,7 +266,7 @@ $$
 
 <br/><br/>
 
-## 3.4.1 The Average Value Function
+### 3.4.1 The Average Value Function
 
 $\bf Def\ (Locally\ integrable)$
 
@@ -280,7 +294,7 @@ If $f\in L_\mathrm{loc}^1$, then $A_rf(x)$ as a function of $(r,x)\in\mathbb{R}^
 
 <br/><br/>
 
-## 3.4.2 The Maximal Function
+### 3.4.2 The Maximal Function
 
 $\bf Def$
 
@@ -304,7 +318,7 @@ $$
 
 <br/><br/>
 
-## 3.4.3 Differentiation Theorem
+### 3.4.3 Differentiation Theorem
 
 $\bf Def\ (Lebesgue\ Set)$
 
@@ -342,7 +356,7 @@ $$
 
 <br/><br/>
 
-## 3.4.4 Some Applications
+### 3.4.4 Some Applications
 
 $\bf Def\ (Regular\ Measures)$
 
@@ -370,10 +384,227 @@ If $f\in L^+(\mathbb{R}^n)$ and $d\nu=fdm$, then $\nu$ is regular if and only if
 
 <br/><br/>
 
+$\bf Lem$
+
+If $\mu$ is a positive Borel measure on $\mathbb{R}$ such that $\mu(-N,N)<\infty$ for every $N\geq 1$, then $\mu$ is regular.
+
+> $\it Proof$
+>
+> By the converse part in Theorem 1.16, $\mu$ is the Lebesgue-Stieltjes measure [not its completion here] associated to some increasing right continuous $F$. Finally, note that by Theorem 1.18, the completion of Lebesgue-Stieltjes measures are regular. So the completion of $\mu$ is regular. But clearly we can restrict the condition to all Borel sets. Hence $\mu$ is regular.
+
+<br/><br/>
+
 $\bf Thm\ 3.22$
 
 Let $\nu$ be a regular signed or complex Borel measure on $\mathbb{R}^n$ and let $d\nu=d\lambda+fdm$ be the Lebesgue decomposition w.r.t. $m$. Then for $m$-a.e. $x\in \mathbb{R}^n$, and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
 
 $$
-\lim_{r\to 0}\frac{v(E_r)}{m(E_r)}=f(x).
+\lim_{r\to 0}\frac{\nu(E_r)}{m(E_r)}=f(x).
 $$
+
+<br/><br/>
+
+## 3.5 Functions of Bounded Variation
+
+In this section, we consider the Lebesgue measure $m$ on $\mathbb{R}$. All "a.e." in this section will always be w.r.t. the Lebesgue measure.
+
+$\bf Lem$
+
+If $\nu$ is a complex measure $\nu$ s.t. $\nu(-\infty,x]=0$ for all $x\in\mathbb{R}$, then $\nu\equiv0$.
+
+> $\it Proof$
+>
+> Note that $\nu=\nu_r+i\nu_i$, where $\nu_r$ is a signed Borel measure such that $\nu_r(-\infty,x]=\nu_r^+(-\infty,x]-\nu_r^-(-\infty,x]=0$ for all $x\in\mathbb{R}$. By the uniqueness in Theorem 1.16, $\nu_r^+=\nu_r^-$. Likewise, $\nu_i^+=\nu_i^-$.
+
+<br/><br/>
+
+### 3.5.1 Increasing Functions
+
+$\bf Prop$
+
+Suppose $G:\mathbb{R}\to\mathbb{R}$ is increasing right continuous. Let $\mu_G$ be the Lebesgue-Stieltjes measure associated to $G$. [Theorem 1.16] Suppose $\mu_G=\lambda+\rho$ is the Lebesgue decomposition w.r.t. $m$, then $G'$ exists a.e. and $d\rho=G'(x)dm$.
+
+> $\it Proof$
+>
+> Assume $d\rho=fdm$. Note that $\mu_G$ is regular by the second lemma in 3.4.4. By Theorem 3.22, for a.e. $x$ and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
+> $$
+\lim_{r\to 0}\frac{\mu_G(E_r)}{m(E_r)}=f(x).$$
+> Note that
+> $$
+G(x+h)-G(x)=\begin{cases}
+\mu_G(x,x+h]&h>0,\\\mu_G(x+h,x]&h<0.
+\end{cases}$$
+> and the families $\{(x-r,x]\}_{r>0}$ and $\{(x,x+r]\}_{r>0}$ shrink nicely to $x$. Hence $G'$ exists and $G'=f$ for a.e. $x$.
+
+<br/><br/>
+
+The result above tells us that increasing right continuous functions are differentiable a.e.. It turns out that the right continuity is unnecessary.
+
+$\bf Thm\ 3.23$
+
+Suppose that $F:\mathbb{R}\to\mathbb{R}$ is increasing. Let $G(x)=F(x+)$. Then
+
+1. $D_f=\{x:f\text{ is discontinuous at }x\}$ is countable.
+2. $F'$ and $G'$ exist and equal to each other a.e..
+
+> $\it Proof$
+>
+> (2) Let $H=F'-G'$. It suffices to show $H'=0$ a.e. Note that $\{H\neq 0\}\subset D_f$ is countable. Fix an enumeration $\{x_j\}=\{H\neq 0\}$ and let $\mu$ be a positive Borel measure defined by $\mu=\sum_{j=1}^{\infty}H(x_j)\delta_{x_j}$ where $\delta_{x_j}$ is the Dirac mass at $x_j$. Then
+> $$
+\begin{aligned}
+\mu(-N,N)
+&=\sum_{j:x_j\in(-N,N)}H(x_j)\\
+&=\sum_{j:x_j\in(-N,N)}F(x_j+)-F(x_j)\\
+&\leq F(N)-F(-N)<\infty.
+\end{aligned}$$
+> Hence by the second lemma in 3.4.4, $\mu$ is regular. Also note that $\mu(\{x_j\}^c)=0=m(\{x_j\})$. So $\mu\perp m$. Then
+> $$
+\begin{aligned}
+\left|\frac{H(x+h)-H(x)}{h}\right|
+\leq\frac{H(x+h)+H(x)}{|h|}
+\leq4\frac{\mu(x-2|h|,x+2|h|)}{m(x-2|h|,x+2|h|)}
+\to 0
+\end{aligned}$$
+> for a.e. $x$ by Theorem 3.22.
+
+<br/><br/>
+
+### 3.5.2 BV functions
+
+$\bf Def/Prop$
+
+Given $F:\mathbb{R}\to\mathbb{C}$, the **total variation function** of $F$, $T_F:\mathbb{R}\to[0,\infty]$ is defined by
+
+$$
+T_F(x)=\sup\left\{\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|:n\in\mathbb{N},-\infty<x_0<\dots<x_n=x\right\}.
+$$
+
+We have the following properties.
+
+1. $T_F(x)$ is increasing. Since adding a point to the partition only increases the sum.
+2. If $a<b$, then
+
+$$
+T_F(b)=T_F(a)+\sup\left\{\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|:n\in\mathbb{N},a=x_0<\dots<x_n=b\right\}.
+$$
+
+If $T_F(\infty)$ is finite, we say $F$ is **of bounded variation on $\mathbb{R}$**. Let $BV$ denote the set of all such functions. One can check $BV$ is a vector space.
+
+If $F:[a,b]\to\mathbb{C}$ and
+
+$$
+\sup\left\{\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|:n\in\mathbb{N},a=x_0<\dots<x_n=b\right\}<\infty,
+$$
+
+then we say $F$ is **of bounded variation on $[a,b]$**. Let $BV([a,b])$ denote the set of all such functions.
+
+<br/><br/>
+
+$\bf e.g.$
+
+$f(x)=x^a\sin(x^{-b})$ is not BV on $[0,1]$ when $0<a\leq b$. See the following references [Page75 Problem 7 (2)](https://max.book118.com/html/2019/1128/8102005123002065.shtm) and [when-is-fx-xa-sin-x-b-with-f0-0-of-bounded-variation-on-0-1](https://math.stackexchange.com/questions/1996653/when-is-fx-xa-sinx-b-with-f0-0-of-bounded-variation-on-0-1).
+
+<br/><br/>
+
+$\bf Def/Thm\ 3.26\ (Jordan\ Decomposition)$
+
+If $F\in BV$ is real valued, then $T_F+F$ and $T_F-F$ are increasing and bounded. $F=\frac{1}{2}(T_F+F)-\frac{1}{2}(T_F-F)$ is the **Jordan decomposition** of $F$, and the right hand side is the difference of the **positive variation of $F$** and the **negative variation of $F$**. Hence a real valued function $F$ is BV if and only if $F$ is the difference of two bounded increasing functions.
+
+> $\it Proof$
+>
+> Fix $x<y$, $\varepsilon>0$ and $x_0<\dots<x_n=x$ such that $\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|\geq T_F(x)+\varepsilon$. Then $T_F(y)\pm F(y)\geq\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|+|F(y)-F(x)|\pm F(y)\geq T_F(x)-\varepsilon\pm F(x)$. For boundedness, note that $|T_F|\leq T_F(\infty)<\infty$. Then $|T_F\pm F|=|T_F\pm (F-F(0))\pm F(0)|\leq 2T_F(\infty)+|F(0)|$.
+
+$\bf Cor$
+
+Note that $F\in BV$ if and only if $\mathrm{Re}F,\mathrm{Im}F\in BV$. Suppose that $F\in BV$. Let $G(x)=F(x+)$, then $G\in BV$. Moreover, by Theorem 3.23 we have
+
+1. $D_f=\{x:f\text{ is discontinuous at }x\}$ is countable.
+2. $F'$ and $G'$ exist and equal to each other a.e..
+
+<br/><br/>
+
+### 3.5.3 Connections to Complex Measures
+
+Let $NBV$ be the collection of right continuous BV functions with $F(-\infty)=0$ (N stands for normalized) . If $F\in BV$, then $G(x)=F(x+)-F(-\infty)\in NBV$ and $G'=F'$ a.e..
+
+$\bf Lem\ 3.28$
+
+1. If $F\in BV$, then $T_F(-\infty)=0$.
+2. If $F\in BV$ is right continuous, then $T_F$ is right continuous.
+3. If $F\in NBV$, then $T_F\pm F\in NBV$.
+
+$\bf Thm\ 3.29$
+
+1. If $\mu$ is a complex Borel measure on $\mathbb{R}$, then $F(x)=\mu(-\infty,x]\in NBV$.
+2. If $F\in NBV$, then there exists a unique complex Borel measure $\mu_F$ on $\mathbb{R}$ such that $F(x)=\mu(-\infty,x]$ and $|\mu_F|=\mu_{T_F}$.
+
+> $\it Proof$
+>
+> (2) Let $F_1^\pm=\frac{1}{2}(T_{\mathrm{Re}F}\pm\mathrm{Re}F)$ and $F_2^\pm=\frac{1}{2}(T_{\mathrm{Im}F}\pm\mathrm{Im}F)$. Then $F=(F_1^+-F_1^-)+i(F_2^+-F_2^-)$ where $F_j^\pm\in NBV$ by lemma 3.28. By Theorem 1.16, there are finite positive Borel measures $\mu_j^\pm$ with $\mu_j^\pm(a,b]=F_j^\pm(b)-F_j^\pm(a)$. Since $F_j^\pm\in NBV$, $F_j^\pm(-\infty)=0$. Hence $\mu_j^\pm(-\infty,x]=F_j^\pm(x)$. Let $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$, then $\mu_F$ is a complex Borel measure on $\mathbb{R}$ with $F(x)=\mu(-\infty,x]$. Uniqueness follows from the first lemma of this section. For the last assertion, see [HW10, Problem 2: Folland, Section 3.5, Problem 28].
+
+$\bf Prop\ 3.30$
+
+If $F\in NBV$, then $F'\in L^1$. Moreover,
+
+1. $\mu_F\perp m$ if and only if $F'=0$ a.e., and
+2. $\mu_F\ll m$ if and only if $F(x)=\int_{-\infty}^x F'(t)dt$.
+
+<br/><br/>
+
+### 3.5.4 Absolutely Continuous Functions
+
+$\bf Def\ (Absolute\ Continuity)$
+
+A function $F:\mathbb{R}\to\mathbb{C}$ is absolutely continuous if for any $\varepsilon>0$, there exists $\delta>0$, such that for any finite disjoint intervals $(a_j,b_j)$, $\sum_{j=1}^{N}(b_j-a_j)<\delta$ implies $\sum_{j=1}^{N}|F(b_j)-F(a_j)|<\varepsilon$.
+
+A function $F:[a,b]\to\mathbb{C}$ is absolutely continuous if the condition holds for intervals $(a_j,b_j)\subset[a,b]$. 
+
+<br/><br/>
+
+$\bf e.g.$
+
+1. $AC\not\Rightarrow BV$. Consider $f(x)=\sin x$.
+2. $AC\Rightarrow$ uniform continuity.
+
+<br/><br/>
+
+$\bf Prop\ 3.32$
+
+If $F\in NBV$, then $F\in AC$ if and only if $\mu_F\ll m$.
+
+> $\it Proof$
+>
+> $(\Leftarrow)$ If $\mu_F\ll m$, by Prop 3.30, $F'\in L^1$ and $F(x)=\int_{-\infty}^x F'(t)dt$. Using Corollary 3.6, we can directly show $F\in AC$ by definition.
+>
+> $(\Rightarrow)$ Suppose that $F\in NBV\cap AC$. Let $\delta$ be  in the definition of AC. Fix a Borel set $E$ with $m(E)=0$. By regularity of $m$, there is an open set $E\subset U$ with $m(U)<\delta$. By the construction of $\mu_F$ [see theorem 3.29], $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$ where $\mu_j^\pm$ is regular [see the proof of the second lemme of section 3.4.4]. So there is an open set $E\subset V$ with $\mu_j^\pm(V)\leq\mu_j^\pm(E)+\varepsilon$. Let $W=U\cap V$. Then $|\mu_F(E)-\mu_F(W)|\leq4\varepsilon$. There is $\{(a_j,b_j)\}_{j=1}^\infty$ such that $W=\bigcup_{j=1}^{\infty}(a_j,b_j)$. Note that for any $N\geq 1$, $\sum_{j=1}^{N}(b_j-a_j)\leq m(U)<\delta$. Hence $\sum_{j=1}^{N}|F(b_j)-F(a_j)|<\varepsilon$. Let $N\to\infty$, we have $\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(W)|=|\sum_{j=1}^{\infty}\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(E)|\leq|\mu_F(E)-\mu_F(W)|+|\mu_F(W)|<5\varepsilon$. Since $\varepsilon$ is arbitrary, $\mu_F(E)=0$. So $\mu_F\ll m$.
+
+<br/><br/>
+
+Combining Prop 3.29, Prop 3.30 and 3.32, we obtain the key result in this section.
+
+$\bf Cor\ 3.33$
+
+1. If $f\in L^1(m)$, then the function $F(x)=\int_{-\infty}^x F'(t)dt\in NBV\cap AC$ and $F'=f$ a.e..
+2. If $F\in NBV\cap AC$, then $F'\in L^1(m)$ and $F(x)=\int_{-\infty}^xF'(t)dt$.
+
+> $\it Proof$
+>
+> (1) If $f\in L^1(m)$, then $\mu(E)=\int_E f(t)dt$ is a complex Borel measure. Let $F(x)=\int_{-\infty}^xf(t)dt$. Note that $\mu(-\infty,x]=F(x)$. By Theorem 3.29 (1), $F\in NBV$. Moreover, by the uniqueness in Theorem 3.29 (2), $\mu_F=\mu$. Since $\mu_F=\mu\ll m$, by Theorem 3.32 we have $F\in AC$. For the last assertion, by the first proposition in Section 3.5.1, $F'=\frac{d\mu_F}{dm}$ a.e.. Note that $d\mu_F=fdm$, so $F'=f$ a.e..
+> 
+> (2) If $F\in NBV\cap AC$, then by Prop 3.30, $F'\in L^1(m)$. By Theorem 3.32, $\mu_F\ll m$. Then by Prop 3.30 (2), $F(x)=\int_{-\infty}^xF'(t)dt$.
+
+<br/><br/>
+
+### 3.5.5 On Bounded Intervals
+
+$\bf Lem\ 3.34$
+
+If $F\in AC[a,b]$, then $F\in BC[a,b]$
+
+$\bf Thm\ 3.35$
+
+If $F\in [a,b]\to\mathbb{C}$, then TFAE.
+
+1. $F\in AC[a,b]$
+2. $F(x)-F(a)=\int_a^xf(t)dt$ for some $f\in L^1([a,b],m)$.
+3. $F$ is differentiable a.e. on $[a,b]$, $F'\in L^1([a,b],m)$ and $F(x)-F(a)=\int_a^xF'(t)dt$.
