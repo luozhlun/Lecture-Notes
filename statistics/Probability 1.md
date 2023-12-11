@@ -45,7 +45,7 @@ A **measure** on a $\sigma$-algebra $\mathcal{F}$ is a function $\mu:\mathcal{F}
 
 <br/><br/>
 
-$\bf Def\ (Probability\ spaces)$
+$\bf Def\ (Probability\ Spaces)$
 
 $(\Omega,\mathcal{F},\mu)$ is called a **measure space** if $\mathcal{F}$ is a $\sigma$-algebra on $\Omega$, and $\mu$ is a measure on $(\Omega,\mathcal{F})$. If $\mu(\Omega)=1$, then $\mu$ called a **probability measure**, usually denoted by $P$. $(\Omega,\mathcal{F},P)$ is called a **probability space**, where $A\in \mathcal{F}$ are called **events**. $\Omega$ is called the set of outcomes or **sample set**.
 
@@ -68,7 +68,7 @@ Let $\mu$ be a measure on $(\Omega,\mathcal{F})$, then
 
 <br/><br/>
 
-$\bf e.g.\ (Discrete\ probability\ space)$
+$\bf e.g.\ (Discrete\ Probability\ Space)$
 
 $\Omega$ countable, $\mathcal{F}=2^\Omega$. Suppose we have a function $P:\Omega\to[0,\infty)$ s.t. $\forall w\in\Omega,P(w)\geq0$, we define $\mu(A):=\sum_{w\in A}P(w)$. Then $(\Omega,\mathcal{F},\mu)$ is a measure space, called the **discrete probability space**.
 
@@ -76,13 +76,13 @@ $\Omega$ countable, $\mathcal{F}=2^\Omega$. Suppose we have a function $P:\Omega
 
 ### 1.1.3 Lebesgue-Stieltjes Measures
 
-$\bf Def\ (Stieltjes\ functions)$
+$\bf Def\ (Stieltjes\ Functions)$
 
 $F$ is said to be a **Stieltjes function** on $\mathbb{R}$ if $F$ is increasing and right continuous.
 
 <br/><br/>
 
-$\bf Thm\ 1.1.4\ (Lebesgue-Stieltjes\ measures)$
+$\bf Thm\ 1.1.4\ (Lebesgue-Stieltjes\ Measures)$
 
 Given any Stieltjes function $F$, there's a unique Borel measure $\mu_F$ on $(\mathbb{R},\mathcal{B})$ with $\mu_F((a,b])=F(b)-F(a)$. The completion of $\mu_F$, also denoted by $\mu_F$, is called the **Lebesgue-Stieltjes measure**. When $F(x)=x$, $\mu_F$ is called the **Lebesgue measure**.
 
@@ -96,7 +96,7 @@ Given any Stieltjes function $F$, there's a unique Borel measure $\mu_F$ on $(\m
 
 ### 1.2.1 Random variables
 
-$\bf Def\ (Random\ variables)$
+$\bf Def\ (Random\ Variables)$
 
 $(\Omega,\mathcal{F},P)$ probability space. A set function $X:\Omega\to\mathbb{R}^n$ is said to be a **random vector** if it's $\mathcal{F}$-measurable, i.e. for any Borel set $B\in\mathcal{B}^n$, $X^{-1}(B)=\{w\in\Omega:X(w)\in B\}\in\mathcal{F}$. In particular, if $n=1$, $X$ is also called **random variable** or **r.v.**.
 
@@ -151,7 +151,7 @@ If a function $F:\mathbb{R}\to [0,1]$ satisfies property 1-3 mentioned above, th
 
 <br/><br/>
 
-$\bf Def\ (Density\ functions)$
+$\bf Def\ (Density\ Functions)$
 
 Let $X$ be a random vector. A measurable function $f:\mathbb{R}^n\to\mathbb{R}$ is the density function of $X$ if for any Borel set $A\in\mathcal{B}^n$,
 $$
@@ -168,7 +168,7 @@ Let $(\Omega,\mathcal{F},P)$ be a probability space and $X:\Omega\to\mathbb{R}^n
 
 In particular, when $n=1$. By the uniqueness in Thm 1.1.4, one's can see that the distribution $\mu$ is the L-S measure restricted to the Borel sets, associated with the distribution function $F$.
 
-$\bf Def\ (Equal\ in\ distribution)$
+$\bf Def\ (Equal\ in\ Distribution)$
 
 If random variables $X,Y$ induce the same probability measures on $\mathbb{R}$, i.e. they have the same distribution, then we say they are **equal in distribution**, denoted by $X=_dY$
 
@@ -187,8 +187,6 @@ Suppose $X,Y$ are random variables, then TFAE.
 > Getting from (3) to (1) follows from Thm 1.1.4. The distribution $F$ is increasing and right continuous, then there is a unique measure $\mu_F$ on $(\mathbb{R},\mathcal{B})$ s.t. $\mu_F(a,b]=F(b)-F(a)$. Since $\mu_X$ and $\mu_Y$ also have this property, we obtain $\mu_X=\mu_F=\mu_Y$.
 
 <br/><br/>
-
----
 
 ## 1.6 Expectations
 
@@ -213,19 +211,19 @@ Let $\mu$ be the distribution of $X$, then
 
 <br/><br/>
 
-$\bf Thm\ (Chebyshev's\ inequality)$
+$\bf Thm\ (Chebyshev's\ Inequality)$
 
 $P(|X|>\varepsilon)\leq\frac{E|X|^p}{\varepsilon^p}$.
 
-$\bf Thm\ (Monotone\ convergence\ theorem)$
+$\bf Thm\ (Monotone\ Convergence\ Theorem)$
 
 If $0\leq X_n\uparrow X$, then $EX_n\uparrow EX$.
 
-$\bf Thm\ (Fatou's\ lemma)$
+$\bf Thm\ (Fatou's\ Lemma)$
 
 If $X_n\geq 0$, then $E(\liminf X_n)\leq\liminf EX_n$.
 
-$\bf Thm\ (Dominated\ convergence\ theorem)$
+$\bf Thm\ (Dominated\ Convergence\ Theorem)$
 
 If $X_n\to X$ a.s., $|X_n|\leq Y$ with $EY<\infty$, then $EX_n\to EX$.
 
@@ -239,7 +237,7 @@ $\bf Thm$
 >
 > See [Real Analysis Ch.2 Integration 2.2.2 Non-negative Measurable Functions](../analysis/Real%20analysis%202.md#222-non-negative-measurable-functions) or Folland Real Analysis Exercise 2.14.
 
-$\bf Thm\ 1.6.9\ (Change\ of\ variables)$
+$\bf Thm\ 1.6.9\ (Change\ of\ Variables)$
 
 Let $X:\Omega\to\mathbb{R}^n$ be a random vector with distribution $\mu$. If $g:(\mathbb{R}^n,\mathcal{B}^n)\to(\mathbb{R}^m,\mathcal{B}^m)$ is measurable, then $g(X)$ is also a random vector. then (if exist)
 
