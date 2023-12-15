@@ -68,6 +68,7 @@ Pandoc option:
 6. [数理统计](statistics/数理统计笔记.md)
 7. [Probability Ch.1 Measure Theory](statistics/Probability%201.md)
 8. [Probability Ch.2 Laws of Large Numbers](statistics/Probability%202.md)
+8. [Probability Ch.3 Central Limit Theorems](statistics/Probability%203.md)
 
 ## Geometry
 
