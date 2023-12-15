@@ -170,7 +170,7 @@ P\left(\left|\frac{\overline S_n-a_n}{b_n}\right|>\varepsilon\right)
 
 $\bf Thm\ (Weak\ Law\ of\ Large\ Numbers)$
 
-Let $X_1,X_2,\dots$ be i.i.d. and $S_n=\sum_{k=1}^{n}X_{n,k}$.
+Let $X_1,X_2,\dots$ be i.i.d. and $S_n=\sum_{k=1}^{n}X_{k}$.
 
 1. (Thm 2.2.12) If $xP(|X_i|>x)\to 0$ as $x\to\infty$, then $S_n/n-\mu_n\to 0$ in probability, where $\mu_n=E(X_i1_{|X_i|\leq n})$.
 2. (Thm 2.2.14) If $E|X_i|<\infty$, then $S_n/n\to \mu$ in probability, where $\mu=EX_i$. 
@@ -242,7 +242,7 @@ $\bf Cor\ 2.3.4$
 
 $\bf Thm\ 2.3.5\ (Strong\ Law\ of\ Large\ Numbers)$
 
-Let $X_1,X_2,\dots$ be i.i.d. with $EX_i=\mu$ and $EX_i^4<\infty$. Let $S_n=\sum_{k=1}^{n}X_{n,k}$, Then $S_n/n\to\mu$ a.s..
+Let $X_1,X_2,\dots$ be i.i.d. with $EX_i=\mu$ and $EX_i^4<\infty$. Let $S_n=\sum_{k=1}^{n}X_{k}$, Then $S_n/n\to\mu$ a.s..
 
 > $\it Proof$
 >
