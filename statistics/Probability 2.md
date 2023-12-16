@@ -275,4 +275,8 @@ P\left(\bigcap_{n=M}^{N}A_n^c\right)
 
 $\bf Thm\ 2.4.5$
 
-Let $X_1,X_2,\dots$ be i.i.d. with $EX_i^+\leq\infty$ and $EX_i^+<\infty$. Then $S_n/n\to EX_i$.
+Let $X_1,X_2,\dots$ be i.i.d. with $EX_i^+\leq\infty$ and $EX_i^+<\infty$. Then $S_n/n\to EX_i$ a.s..
+
+$\bf Thm\ 2.4.7\ (Renewal\ Theory)$
+
+Let $X_1,X_2,\dots$ be i.i.d. with $0<X_i<\infty$, $T_n=\sum_{j=1}^{n}X_j$, $N_t=\sup\{n:T_n\leq t\}$. If $\mu= EX_i<\infty$, then $\frac{N_t}{t}\to\frac{1}{\mu}$ a.s..
