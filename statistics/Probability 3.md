@@ -4,11 +4,14 @@
     - [3.2.2 Tightness](#322-tightness)
   - [3.3 Characteristic Functions](#33-characteristic-functions)
     - [3.3.1 Properties](#331-properties)
-    - [3.3.2 Connection to Weak Convergence](#332-connection-to-weak-convergence)
+    - [3.3.2 Examples](#332-examples)
+    - [3.3.3 Connection to Weak Convergence](#333-connection-to-weak-convergence)
   - [3.4 Central Limit Theorems](#34-central-limit-theorems)
     - [3.4.1 i.i.d Sequences](#341-iid-sequences)
     - [3.4.2 Triangular Arrays](#342-triangular-arrays)
   - [3.7 Poisson Process](#37-poisson-process)
+    - [3.7.1 Poisson Convergence](#371-poisson-convergence)
+    - [3.7.2 Poisson Process](#372-poisson-process)
   - [4.1 Conditional Expectation](#41-conditional-expectation)
 
 # Chapter 3 Central Limit Theorems
@@ -40,8 +43,21 @@ If $F_n\Rightarrow F$, then there exist random variables $Y_n$ with distribution
 
 $\bf Thm\ 3.2.9$
 
-1. $X_n\Rightarrow X$ if and only if $Eg(X_n)\to Eg(X)$ for all bounded continuous function $g$.
-2. $X_n\to X$ in probability implies $X_n\Rightarrow X$ by Theorem 3.2.4 (2).
+$X_n\Rightarrow X_\infty$ if and only if $Eg(X_n)\to Eg(X_\infty)$ for all bounded continuous function $g$.
+
+> $\it Proof$
+>
+> $(\Rightarrow)$ Find $Y_n=_d X_n$ with $Y_n\to Y_\infty$ a.s.. Then apply BCT.
+>
+> $(\Leftarrow)$ Idea: Introduce $g_{x,\epsilon}(y)=\begin{cases}1&y\leq x\\0&y\geq x+\epsilon\\\mathrm{linear}&x\leq y\leq x+\epsilon\end{cases}$, then $P(X_n\leq x)\leq Eg_{x,\varepsilon}(X_n)\leq P(X_n\leq x+\varepsilon)$.
+
+$\bf Cor$
+
+$X_n\to X$ in probability implies $X_n\Rightarrow X$.
+
+> $\it Proof$
+>
+> It follows from Theorem 2.3.4 (2) and 3.2.9.
 
 $\bf Thm\ 3.2.10\ (Continuous\ Map\ Theorem)$
 
@@ -62,9 +78,15 @@ $\bf Thm\ 3.2.11$
 TFAE:
 
 1. $X_n\Rightarrow X$.
-2. For all open sets $G$, $\liminf P(X_n\in G)\geq P(X\in G)$.
-3. For all closed sets $K$, $\limsup P(X_n\in K)\leq P(X\in K)$.
-4. For all Borel sets $A$ with $P(X\in\partial A)=0$, $\lim P(X_n\in A)=P(X\in A)$.
+2. [Theorem 3.2.9] $Eg(X_n)\to Eg(X)$ for all bounded continuous function $g$.
+3. [Theorem 3.2.15] Every subsequence of $X_n$ has a further subsequence that converges to $X$.
+4. For all open sets $G$, $\liminf P(X_n\in G)\geq P(X\in G)$.
+5. For all closed sets $K$, $\limsup P(X_n\in K)\leq P(X\in K)$.
+6. For all Borel sets $A$ with $P(X\in\partial A)=0$, $\lim P(X_n\in A)=P(X\in A)$.
+
+> $\it Proof$
+>
+> $(3\Rightarrow 1)$ Let $F_n$ be the distribution function of $X_n$. If $X_n\not\Rightarrow X$, then there is a continuous point $x_0$ of $F$ such that $F_n(x_0)\not\to F(x_0)$. There is a subsequence $F_{n_k}$ such that $F_{n_k}(x_0)$ is convergent but whose limit is not $F(x_0)$. By condition, there is $F_{n_{k_l}}\Rightarrow F$, and hence $F_{n_{k_l}}(x_0)\to F(x_0)$. Contradiction.
 
 <br/><br/>
 
@@ -123,8 +145,6 @@ $$
 \frac{1}{2\pi}\lim_{T\to\infty}\int_{-T}^T\frac{e^{-ita}-e^{-itb}}{it}\varphi(t)dt=\mu(a,b)+\frac{1}{2}\mu(\{a,b\}).
 $$
 
-$\bf Rmk$
-
 Suppose that $x$ is a continuous point of the distribution function $F(x)$ of $X$, then
 
 $$
@@ -145,7 +165,34 @@ $$
 
 <br/><br/>
 
-### 3.3.2 Connection to Weak Convergence
+### 3.3.2 Examples
+
+$\bf e.g. 1\ (Binomial)$
+
+- $X\sim B(n,p)$ if $P(X=k)=\binom nkp^kq^{n-k}$
+
+- $\varphi(t)=(q+pe^{it})^n$
+
+$\bf e.g. 2\ (Poisson)$
+
+- $X\sim\mathrm{Poisson}(\lambda)$ if $P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}$
+
+- $\varphi(t)=\exp(\lambda(e^{it}-1))$
+
+$\bf e.g. 3\ (Normal)$
+
+- $X\sim N(\mu,\sigma^2)$ if $P(X\leq x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp(-\frac{(x-\mu)^2}{2\sigma^2})$
+- $\varphi(t)=e^{i\mu t-\frac{1}{2}\sigma^2 t^2}$
+
+
+$\bf e.g. 4\ (Exponential)$
+
+- $X\sim\mathrm{Exp}(\lambda)$ if $P(X\leq x)=1-e^{-\lambda x}$
+- $\varphi(t)=\frac{\lambda}{\lambda-it}$
+
+<br/><br/>
+
+### 3.3.3 Connection to Weak Convergence
 
 $\bf Lem$
 
@@ -183,8 +230,7 @@ Let $\varphi_n$ be the characteristic function of random variable $X_n$ for $1\l
 >
 > (2) Tightness: Let $\mu_n$ be the distribution of $X_n$. It suffices to show for all $\varepsilon>0$, there is small enough $u>0$ such that $\limsup_{n\to\infty}\mu_n\{x:|x|>\frac{2}{u}\}\leq\varepsilon$. This is true since $\limsup_{n\to\infty}\mu_n\{x:|x|>\frac{2}{u}\}\leq\frac{1}{u}\int_{-u}^u(1-\varphi(t))dt\to 1-\varphi(0)=0$ as $u\to 0$ by the last lemma.
 >
-> Now we claim that $F_n\Rightarrow F$ where $F$ is the distribution function with characteristic function $\varphi$. If not, there is a continuous point $x_0$ of $F$ such that $F_n(x_0)\not\to F(x_0)$. Since $\{F_n(x_0)\}$ is bounded, there is a convergent subsequence $F_{n_k}(x_0)$ whose limit is not $F(x_0)$. By Helly's Selection Theorem, there is a further subsequence $F_{n_{k_l}}\Rightarrow F^\ast$ where $F^\ast$ is a distribution function. Then $\varphi_{n_{k_l}}(t)\to\varphi_{F^\ast}(t)$ for all $t$. Hence $\varphi_{F^\ast}(t)=\varphi(t)$. So $F^\ast=F$ since they have the same characteristic function. So $F^\ast$ is continuous at $x_0$ and hence $F_{n_{k_l}}(x_0)\to F^\ast(x_0)=F(x_0)$. It contradicts to the fact that $F_{n_k}(x_0)$ is a convergent sequence whose limit is not $F(x_0)$.
-
+> Let $F_{n_k}$ be a subsequence of $F_n$. By Helly's Selection Theorem, there is a further subsequence $F_{n_{k_l}}\Rightarrow F^\ast$ where $F^\ast$ is a distribution function. Then $\varphi_{n_{k_l}}(t)\to\varphi_{F^\ast}(t)$ for all $t$. Hence $\varphi_{F^\ast}(t)=\varphi(t)$. So $F_{n_{k_l}}\Rightarrow F$ where $F$ is the distribution function with characteristic function $\varphi$. By Theorem 3.2.15, $F_n\Rightarrow F$.
 
 <br/><br/>
 
@@ -215,9 +261,24 @@ $$
 
 ### 3.4.2 Triangular Arrays
 
+$\bf Thm\ 3.4.10\ (Lindeberg-Feller\ Theorem)$
+
+For each $n$, let $X_{n,1},\dots,X_{n,n}$ be independent random variables with $EX_{n,m}=0$. Suppose that
+
+1. $\sum_{m=1}^{n}EX_{n,m}^2\to\sigma^2>0$, and
+2. For all $\varepsilon>0$, $\lim_{n\to\infty}\sum_{m=1}^{n}E(|X_{n,m}^2|;|X_{n,m}|>\varepsilon)=0$.
+
+Then $S_n=\sum_{m=1}^{n}X_{n,m}\Rightarrow \chi\sim N(0,1)$.
+
+<br/><br/>
+
+## 3.7 Poisson Process
+
+### 3.7.1 Poisson Convergence
+
 $\bf Thm\ 3.6.1$
 
-For each $n$, let $X_{n,1},\dots,X_{n,n}$ be independent random variables such that $X_{n,m}\sim B(1,p_{n,m})$. Suppose that
+For each $n$, let $X_{n,1},\dots,X_{n,n}$ be independent random variables with $X_{n,m}\sim B(1,p_{n,m})$. Suppose that
 
 1. $\sum_{m=1}^{n}p_{n,m}\to\lambda\in(0,\infty)$, and
 2. $\max_{1\leq m\leq n}p_{n,m}\to 0$.
@@ -231,19 +292,91 @@ Then $S_n=\sum_{m=1}^{n}X_{n,m}\Rightarrow Z\sim\mathrm{Poisson}(\lambda)$.
 \varphi_n(t)=\prod_{m=1}^{n}Ee^{itX_{n,m}}=\prod_{m=1}^{n}(1-p_{n,m}+p_{n,m}e^{it}).$$
 > By Lemma 3.4.3/3.4.4, we have
 > $$
+\begin{aligned}
 \left|\prod_{m=1}^{n}(1-p_{n,m}+p_{n,m}e^{it})-\prod_{m=1}^{n}e^{p_{n,m}(e^{it}-1)}\right|
-\leq\sum_{m=1}^{n}\left|1-p_{n,m}+p_{n,m}e^{it}-e^{p_{n,m}(e^{it}-1)}\right|
-\leq\sum_{m=1}^{n}p_{n,m}^2|e^{it}-1|^2
-\leq4\max_{1\leq m\leq n}p_{n,m}\sum_{m=1}^{n}p_{n,m}\to 0.$$
+&\leq\sum_{m=1}^{n}\left|1-p_{n,m}+p_{n,m}e^{it}-e^{p_{n,m}(e^{it}-1)}\right|\\
+&\leq\sum_{m=1}^{n}p_{n,m}^2|e^{it}-1|^2\\
+&\leq4\max_{1\leq m\leq n}p_{n,m}\sum_{m=1}^{n}p_{n,m}\to 0.
+\end{aligned}$$
 > Note that $\prod_{m=1}^{n}e^{p_{n,m}(e^{it}-1)}=\exp(\sum_{m=1}^{n}p_{n,m}(e^{it}-1))\to\exp(\lambda(e^{it}-1))$. Hence $\varphi_n(t)\to\exp(\lambda(e^{it}-1))$ which is the characteristic of $Z$. Then Theorem 3.3.17 completes the proof.
 
 $\bf Rmk$
 
 In particular, it follows that $B(n,\frac{\lambda}{n})\Rightarrow\mathrm{Poisson}(\lambda)$.
 
+$\bf Thm\ 3.7.1$
+
+For each $n$, let $X_{n,1},\dots,X_{n,n}$ be independent random variables with $P(X_{n,m}=1)=p_{n,m}$ and $P(X_{n,m}\geq 2)=\varepsilon_{n,m}$. Suppose that
+
+1. $\sum_{m=1}^{n}p_{n,m}\to\lambda\in(0,\infty)$,
+2. $\max_{1\leq m\leq n}p_{n,m}\to 0$, and
+3. $\sum_{m=1}^{n}\varepsilon_{n,m}\to 0$.
+
+Then $S_n=\sum_{m=1}^{n}X_{n,m}\Rightarrow Z\sim\mathrm{Poisson}(\lambda)$.
+
+> $\it Proof$
+>
+> Let $\tilde X_{n,m}=1_{X_{n,m}=1}$. Then Theorem 3.6.1 implies $S_n'\Rightarrow Z$. Note that (3) implies $P(S_n\neq S_n')\to 0$. So $S_n-S_n'\Rightarrow 0$. Hence $S_n=S_n-S_n'+S_n'\Rightarrow Z$.
+
 <br/><br/>
 
-## 3.7 Poisson Process
+### 3.7.2 Poisson Process
+
+$\bf Def\ (Poisson\ Process)$
+
+$\{N(t)\}_{t\geq 0}$ is called Poisson process if
+
+1. $N(0)=0$.
+2. $N(s,t]:=N(t)-N(s)$ is independent in disjoint intervals.
+3. $N(s,t]:=N(t)-N(s)\sim\mathrm{Poisson}(\lambda(t-s))$.
+
+$\bf Thm\ 3.7.2$
+
+This definition is equivalent to
+
+1. $N(0)=0$
+2. $N(s,t]:=N(t)-N(s)$ is independent in disjoint intervals.
+3. The distribution $N(s,t]$ only depends on $t-s$.
+4. $P(N(0,h]=1)=\lambda h+o(h)$ and $P(N(0,h]\geq 2)=o(h)$.
+
+> $\it Proof$
+>
+> Let $X_{n,m}=N(\frac{(m-1)t}{n},\frac{mt}{n}]$ and apply Theorem 3.7.1.
+
+<br/><br/>
+
+Let $\xi_1,\xi_2,\dots$ be independent with $\xi_n\sim\mathrm{Exp}(\lambda)$. Let $T_n=\sum_{m=1}^{n}\xi_m\sim\Gamma(n,\lambda)$ and $T_0=0$. Then $T_n\sim\Gamma(n,\lambda)$ follows Gamma distribution. I.e. the density of $T_n$ is
+
+$$
+f_{T_n}(x)=1_{x\geq 0}\frac{\lambda^nx^{n-1}}{(n-1)!}e^{-\lambda x}.
+$$
+
+Let $N(t)=\sup\{n:T_n\leq t\}$. Then
+
+$$
+\begin{aligned}
+T_n&=\sum_{m=1}^{n}\xi_m,\\[1ex]
+\{T_n\leq t\}&=\{N(t)\geq n\},\\[1ex]
+\{N(t)=n\}&=\{T_n\leq t<T_{n+1}\}.
+\end{aligned}\tag{1}
+$$
+
+Equation (1) shows that $\{N(t)\}_{t\geq 0}$ and $\{\xi_n\}_{n\geq 0}$ define each other.
+
+$\bf Thm$
+
+$\{N(t)\}_{t\geq 0}$ is Poisson process with rate $\lambda$ if and only if $\{\xi_n\}_{n\geq 1}$ is i.i.d. with $\xi_n\sim\mathrm{Exp}(\lambda)$.
+
+<br/><br/>
+
+$\bf Thm$
+
+If $\{N(t)\}_{t\geq 0}$ is Poisson process with rate $\lambda$, then
+
+1. [Thm 2.4.7] $\frac{N(t)}{t}\to\frac{1}{\lambda}$ a.s.
+2. [Thm 2.6.3] $\frac{E(N(t))}{t}\to\frac{1}{\lambda}$.
+
+<br/><br/>
 
 ## 4.1 Conditional Expectation
 
