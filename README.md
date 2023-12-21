@@ -36,9 +36,11 @@ Pandoc option:
 3. [Real Variable Function Ch.3 Measurable Function](https://zhuanlan.zhihu.com/p/493842948)
 4. [Real Variable Function Ch.4 The Lebesgue Integration](https://zhuanlan.zhihu.com/p/513296172)
 5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/524968471)
-6. [Real Analysis Ch.1 Measures](analysis/Real%20analysis%201.md)
-7. [Real Analysis Ch.2 Integration](analysis/Real%20analysis%202.md)
-7. [Real Analysis Ch.3 Signed Measures and Differentiation](analysis/Real%20analysis%203.md)
+6. [泛函分析 第一章 度量空间](analysis/泛函分析笔记%201%20度量空间.md)
+7. [泛函分析 第二章 线性泛函](analysis/泛函分析笔记%202%20线性泛函.md)
+8. [Real Analysis Ch.1 Measures](analysis/Real%20analysis%201.md)
+9. [Real Analysis Ch.2 Integration](analysis/Real%20analysis%202.md)
+10. [Real Analysis Ch.3 Signed Measures and Differentiation](analysis/Real%20analysis%203.md)
 
 #### Complex Analysis
 
