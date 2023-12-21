@@ -24,7 +24,7 @@ Ref:
 2. [Real Variable Function Ch.2 Lebesgue Measure](https://zhuanlan.zhihu.com/p/487435847)
 3. [Real Variable Function Ch.3 Measurable Function](https://zhuanlan.zhihu.com/p/493842948)
 4. [Real Variable Function Ch.4 The Lebesgue Integration](https://zhuanlan.zhihu.com/p/513296172)
-5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/5249.68471)
+5. [Real Variable Function Ch.5 Differentiation and Integration](https://zhuanlan.zhihu.com/p/524968471)
 
 # Chapter 3 Signed Measures and Differentiation
 
@@ -225,7 +225,7 @@ Let $\nu$ be a complex measure.
 |\nu|(E)=\int_E\left|\frac{d\nu}{d\mu}\right|d\mu=0.$$
 > So $\frac{d\nu}{d\mu}=0$ $|\nu|$-a.e. and hence $\left|\frac{d\nu}{d|\nu|}\right|=1$ $|\nu|$-a.e..
 >
-> (3) See Math721 HW8 Problem 2: Folland, Section 3.3, Problem 18.
+> (3) See [HW8 Problem 2: Folland, Section 3.3, Problem 18].
 
 $\bf Prop\ 3.14$
 
@@ -243,12 +243,12 @@ Let $E\in\mathcal{M}$, then $E$ is $\nu$-null if and only if $|\nu|(E)=0$.
 
 > $\it Proof$
 > 
-> Suppose that $|\nu|(E)=0$. If $F\in\mathcal{M}$ and $F\subset E$, then it follows from Folland Proposition 3.13 (a) that $|\nu(F)|\leq |\nu|(F)\leq|\nu|(E)=0$. So $\nu(F)=0$. Hence $E$ is $\nu$-null.
+> Suppose that $|\nu|(E)=0$. If $F\in\mathcal{M}$ and $F\subset E$, then it follows from Proposition 3.13 (a) that $|\nu(F)|\leq |\nu|(F)\leq|\nu|(E)=0$. So $\nu(F)=0$. Hence $E$ is $\nu$-null.
 > 
-> For the other direction, suppose that $E$ is $\nu$-null. Note that by Folland Proposition 3.13 (b), $\nu\ll|\nu|$. Let $f=\frac{d\nu}{d|\nu|}$. Then for arbitrary $A\in\mathcal{M}$,
+> For the other direction, suppose that $E$ is $\nu$-null. Note that by Proposition 3.13 (b), $\nu\ll|\nu|$. Let $f=\frac{d\nu}{d|\nu|}$. Then for arbitrary $A\in\mathcal{M}$,
 > $$
 0=\nu(A\cap E)=\int_{A\cap E}fd|\nu|=\int_A\chi_Efd|\nu|.$$
-> Since $|\nu|$ is a positive measure, by Folland Proposition 2.23 (b), $\chi_Ef=0$ $|\nu|$-a.e. Note that by Folland Proposition 3.13 (b), $|f|=1$ $|\nu|$-a.e.. It follows that $|\chi_E|=\frac{|\chi_Ef|}{|f|}=0$ $|\nu|-$a.e., and hence $|\nu|(E)=0$.
+> Since $|\nu|$ is a positive measure, by Proposition 2.23 (b), $\chi_Ef=0$ $|\nu|$-a.e. Note that by Proposition 3.13 (b), $|f|=1$ $|\nu|$-a.e.. It follows that $|\chi_E|=\frac{|\chi_Ef|}{|f|}=0$ $|\nu|-$a.e., and hence $|\nu|(E)=0$.
 
 <br/><br/>
 
@@ -390,7 +390,7 @@ If $\mu$ is a positive Borel measure on $\mathbb{R}$ such that $\mu(-N,N)<\infty
 
 > $\it Proof$
 >
-> By the converse part in Theorem 1.16, $\mu$ is the Lebesgue-Stieltjes measure [not its completion here] associated to some increasing right continuous $F$. Finally, note that by Theorem 1.18, the completion of Lebesgue-Stieltjes measures are regular. So the completion of $\mu$ is regular. But clearly we can restrict the condition to all Borel sets. Hence $\mu$ is regular.
+> By the converse part in Theorem 1.16, $\mu$ is the Lebesgue-Stieltjes Borel measure associated to some increasing right continuous $F$. Finally, note that by Theorem 1.18, the completion of Lebesgue-Stieltjes measures are regular. So the completion of $\mu$ is regular. But clearly we can restrict the condition to all Borel sets. Hence $\mu$ is regular.
 
 <br/><br/>
 
@@ -426,7 +426,7 @@ Suppose $G:\mathbb{R}\to\mathbb{R}$ is increasing right continuous. Let $\mu_G$ 
 
 > $\it Proof$
 >
-> Assume $d\rho=fdm$. Note that $\mu_G$ is regular by the second lemma in 3.4.4. By Theorem 3.22, for a.e. $x$ and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
+> Assume $d\rho=fdm$. Note that $\mu_G$ is regular by the second lemma in Section 3.4.4. By Theorem 3.22, for a.e. $x$ and family $\{E_r\}_{r>0}$ that shrinks nicely to $x$,
 > $$
 \lim_{r\to 0}\frac{\mu_G(E_r)}{m(E_r)}=f(x).$$
 > Note that
@@ -449,7 +449,7 @@ Suppose that $F:\mathbb{R}\to\mathbb{R}$ is increasing. Let $G(x)=F(x+)$. Then
 
 > $\it Proof$
 >
-> (2) Let $H=F'-G'$. It suffices to show $H'=0$ a.e. Note that $\{H\neq 0\}\subset D_f$ is countable. Fix an enumeration $\{x_j\}=\{H\neq 0\}$ and let $\mu$ be a positive Borel measure defined by $\mu=\sum_{j=1}^{\infty}H(x_j)\delta_{x_j}$ where $\delta_{x_j}$ is the Dirac mass at $x_j$. Then
+> (2) Let $H=F-G$. It suffices to show $H'=0$ a.e. Note that $\{H\neq 0\}\subset D_f$ is countable. Fix an enumeration $\{x_j\}=\{H\neq 0\}$ and let $\mu$ be a positive Borel measure defined by $\mu=\sum_{j=1}^{\infty}H(x_j)\delta_{x_j}$ where $\delta_{x_j}$ is the Dirac mass at $x_j$. Then
 > $$
 \begin{aligned}
 \mu(-N,N)
@@ -500,12 +500,6 @@ then we say $F$ is **of bounded variation on $[a,b]$**. Let $BV([a,b])$ denote t
 
 <br/><br/>
 
-$\bf e.g.$
-
-$f(x)=x^a\sin(x^{-b})$ is not BV on $[0,1]$ when $0<a\leq b$. See the following references [Page75 Problem 7 (2)](https://max.book118.com/html/2019/1128/8102005123002065.shtm) and [when-is-fx-xa-sin-x-b-with-f0-0-of-bounded-variation-on-0-1](https://math.stackexchange.com/questions/1996653/when-is-fx-xa-sinx-b-with-f0-0-of-bounded-variation-on-0-1).
-
-<br/><br/>
-
 $\bf Def/Thm\ 3.26\ (Jordan\ Decomposition)$
 
 If $F\in BV$ is real valued, then $T_F+F$ and $T_F-F$ are increasing and bounded. $F=\frac{1}{2}(T_F+F)-\frac{1}{2}(T_F-F)$ is the **Jordan decomposition** of $F$, and the right hand side is the difference of the **positive variation of $F$** and the **negative variation of $F$**. Hence a real valued function $F$ is BV if and only if $F$ is the difference of two bounded increasing functions.
@@ -514,12 +508,10 @@ If $F\in BV$ is real valued, then $T_F+F$ and $T_F-F$ are increasing and bounded
 >
 > Fix $x<y$, $\varepsilon>0$ and $x_0<\dots<x_n=x$ such that $\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|\geq T_F(x)+\varepsilon$. Then $T_F(y)\pm F(y)\geq\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|+|F(y)-F(x)|\pm F(y)\geq T_F(x)-\varepsilon\pm F(x)$. For boundedness, note that $|T_F|\leq T_F(\infty)<\infty$. Then $|T_F\pm F|=|T_F\pm (F-F(0))\pm F(0)|\leq 2T_F(\infty)+|F(0)|$.
 
-$\bf Cor$
+$\bf Thm\ 3.27$
 
-Note that $F\in BV$ if and only if $\mathrm{Re}F,\mathrm{Im}F\in BV$. Suppose that $F\in BV$. Let $G(x)=F(x+)$, then $G\in BV$. Moreover, by Theorem 3.23 we have
-
-1. $D_f=\{x:f\text{ is discontinuous at }x\}$ is countable.
-2. $F'$ and $G'$ exist and equal to each other a.e..
+1. $F\in BV$ if and only if $\mathrm{Re}F,\mathrm{Im}F\in BV$.
+2. If $F\in BV$, then $F(\pm\infty)$ and $F(x\pm)$ exist for all $x$, $G(x)=F(x+)\in BV$, $D_f=\{x:f\text{ is discontinuous at }x\}$ is countable, and $F'=G'$ a.e..
 
 <br/><br/>
 
@@ -533,14 +525,20 @@ $\bf Lem\ 3.28$
 2. If $F\in BV$ is right continuous, then $T_F$ is right continuous.
 3. If $F\in NBV$, then $T_F\pm F\in NBV$.
 
+> $\it Proof$
+>
+> (1) Fix $\varepsilon>0$, $x\in\mathbb{R}$ and a partition $y_0<\dots<y_m=x$ such that $\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|\geq T_F(x)-\varepsilon$. Then $T_F(x)-T_F(y_0)\geq\sum_{j=1}^{n}|F(x_j)-F(x_{j-1})|\geq T_F(x)-\varepsilon$ and hence $T_F(y_0)\leq\varepsilon$.
+
 $\bf Thm\ 3.29$
 
 1. If $\mu$ is a complex Borel measure on $\mathbb{R}$, then $F(x)=\mu(-\infty,x]\in NBV$.
-2. If $F\in NBV$, then there exists a unique complex Borel measure $\mu_F$ on $\mathbb{R}$ such that $F(x)=\mu(-\infty,x]$ and $|\mu_F|=\mu_{T_F}$.
+2. If $F\in NBV$, then there exists a unique complex Borel measure $\mu_F$ on $\mathbb{R}$ such that $F(x)=\mu_F(-\infty,x]$ and $|\mu_F|=\mu_{T_F}$. Moreover, let $\mu_F=\lambda+\rho$ be the Lebesgue decomposition w.r.t. $m$, then $d\rho=F'dm$.
 
 > $\it Proof$
 >
-> (2) Let $F_1^\pm=\frac{1}{2}(T_{\mathrm{Re}F}\pm\mathrm{Re}F)$ and $F_2^\pm=\frac{1}{2}(T_{\mathrm{Im}F}\pm\mathrm{Im}F)$. Then $F=(F_1^+-F_1^-)+i(F_2^+-F_2^-)$ where $F_j^\pm\in NBV$ by lemma 3.28. By Theorem 1.16, there are finite positive Borel measures $\mu_j^\pm$ with $\mu_j^\pm(a,b]=F_j^\pm(b)-F_j^\pm(a)$. Since $F_j^\pm\in NBV$, $F_j^\pm(-\infty)=0$. Hence $\mu_j^\pm(-\infty,x]=F_j^\pm(x)$. Let $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$, then $\mu_F$ is a complex Borel measure on $\mathbb{R}$ with $F(x)=\mu(-\infty,x]$. Uniqueness follows from the first lemma of this section. For the last assertion, see [HW10, Problem 2: Folland, Section 3.5, Problem 28].
+> (1) By continuity from above, $F$ is right continuous and $F(-\infty)=0$. Now we show $F\in BV$. Decompose $\mu=\mu_1^+-\mu_1^-+i(\mu_2^+-\mu_2^-)$ where $\mu_j^\pm$ are all finite positive measures. Let $F_j^\pm=\mu_j^\pm(-\infty,x]$, then $F=F_1^+-F_1^-+i(F_2^+-F_2^-)$. Since each $F_j^\pm$ is increasing and bounded, $F\in BV$.
+> 
+> (2) Let $F_1^\pm=\frac{1}{2}(T_{\mathrm{Re}F}\pm\mathrm{Re}F)$ and $F_2^\pm=\frac{1}{2}(T_{\mathrm{Im}F}\pm\mathrm{Im}F)$. Then each $F_j^\pm$ is right continuous increasing bounded function by Theorem 3.26 and $F=(F_1^+-F_1^-)+i(F_2^+-F_2^-)$. By Theorem 1.16, let $\mu_j^\pm$ be the Lebesgue-Stieltjes Borel measure associated to $F_j^\pm$. Then $\mu_j^\pm$ is a finite positive Borel measure with $\mu_j^\pm(a,b]=F_j^\pm(b)-F_j^\pm(a)$. Since $F_j^\pm\in NBV$ by Lemma 3.28 (3), $F_j^\pm(-\infty)=0$. Hence $\mu_j^\pm(-\infty,x]=F_j^\pm(x)$. Let $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$, then $\mu_F$ is a complex Borel measure on $\mathbb{R}$ with $F(x)=\mu(-\infty,x]$. Uniqueness follows from the first lemma of this section. For the next assertion, see [HW10, Problem 2: Folland, Section 3.5, Problem 28]. For the last assertion, the same proof for the first proposition in Section 3.5.1 works.
 
 $\bf Prop\ 3.30$
 
@@ -548,6 +546,14 @@ If $F\in NBV$, then $F'\in L^1$. Moreover,
 
 1. $\mu_F\perp m$ if and only if $F'=0$ a.e., and
 2. $\mu_F\ll m$ if and only if $F(x)=\int_{-\infty}^x F'(t)dt$.
+
+> $\it Proof$
+>
+> Let $\mu_F=\lambda+\rho$ be the Lebesgue decomposition w.r.t. $m$, then $d\rho=F'dm$.
+>
+> (1) Note that $\mu_F\perp m\Leftrightarrow\rho=0\Leftrightarrow F'=0$ a.e..
+>
+> (2) Note that $\mu_F\ll m\Leftrightarrow\lambda=0$. If $\lambda=0$, then $F(x)=\mu_F(-\infty,x]=\rho(-\infty,x]=\int_{\mu_F(-\infty,x]}F'dm=\int_{-\infty}^x F'(t)dt$. For the other direction, suppose that $F(x)=\int_{-\infty}^x F'(t)dt$, let $\nu=\mu_F-\rho$, then $\nu$ is a complex measure such that $\nu(-\infty,x]=0$ for all $x$. By the first lemma in this section, $\nu=0$.
 
 <br/><br/>
 
@@ -576,20 +582,20 @@ If $F\in NBV$, then $F\in AC$ if and only if $\mu_F\ll m$.
 >
 > $(\Leftarrow)$ If $\mu_F\ll m$, by Prop 3.30, $F'\in L^1$ and $F(x)=\int_{-\infty}^x F'(t)dt$. Using Corollary 3.6, we can directly show $F\in AC$ by definition.
 >
-> $(\Rightarrow)$ Suppose that $F\in NBV\cap AC$. Let $\delta$ be  in the definition of AC. Fix a Borel set $E$ with $m(E)=0$. By regularity of $m$, there is an open set $E\subset U$ with $m(U)<\delta$. By the construction of $\mu_F$ [see theorem 3.29], $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$ where $\mu_j^\pm$ is regular [see the proof of the second lemme of section 3.4.4]. So there is an open set $E\subset V$ with $\mu_j^\pm(V)\leq\mu_j^\pm(E)+\varepsilon$. Let $W=U\cap V$. Then $|\mu_F(E)-\mu_F(W)|\leq4\varepsilon$. There is $\{(a_j,b_j)\}_{j=1}^\infty$ such that $W=\bigcup_{j=1}^{\infty}(a_j,b_j)$. Note that for any $N\geq 1$, $\sum_{j=1}^{N}(b_j-a_j)\leq m(U)<\delta$. Hence $\sum_{j=1}^{N}|F(b_j)-F(a_j)|<\varepsilon$. Let $N\to\infty$, we have $\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(W)|=|\sum_{j=1}^{\infty}\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(E)|\leq|\mu_F(E)-\mu_F(W)|+|\mu_F(W)|<5\varepsilon$. Since $\varepsilon$ is arbitrary, $\mu_F(E)=0$. So $\mu_F\ll m$.
+> $(\Rightarrow)$ Suppose that $F\in NBV\cap AC$. Let $\delta$ be  in the definition of AC. Fix a Borel set $E$ with $m(E)=0$. By regularity of $m$, there is an open set $E\subset U$ with $m(U)<\delta$. By the construction of $\mu_F$ [see theorem 3.29], $\mu_F=(\mu_1^+-\mu_1^-)+i(\mu_2^+-\mu_2^-)$ where $\mu_j^\pm$ is regular [see the proof of the second lemme of Section 3.4.4]. So there is an open set $E\subset V$ with $\mu_j^\pm(V)\leq\mu_j^\pm(E)+\varepsilon$. Let $W=U\cap V$. Then $|\mu_F(E)-\mu_F(W)|\leq4\varepsilon$. There is $\{(a_j,b_j)\}_{j=1}^\infty$ such that $W=\bigcup_{j=1}^{\infty}(a_j,b_j)$. Note that for any $N\geq 1$, $\sum_{j=1}^{N}(b_j-a_j)\leq m(U)<\delta$. Hence $\sum_{j=1}^{N}|F(b_j)-F(a_j)|<\varepsilon$. Let $N\to\infty$, we have $\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(W)|=|\sum_{j=1}^{\infty}\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|\mu_F(a_j,b_j)|\leq\sum_{j=1}^{\infty}|F(b_j)-F(a_j)|<\varepsilon$. Hence $|\mu_F(E)|\leq|\mu_F(E)-\mu_F(W)|+|\mu_F(W)|<5\varepsilon$. Since $\varepsilon$ is arbitrary, $\mu_F(E)=0$. So $\mu_F\ll m$.
 
 <br/><br/>
 
 Combining Prop 3.29, Prop 3.30 and 3.32, we obtain the key result in this section.
 
-$\bf Cor\ 3.33$
+$\bf Thm\ 3.33$
 
-1. If $f\in L^1(m)$, then the function $F(x)=\int_{-\infty}^x F'(t)dt\in NBV\cap AC$ and $F'=f$ a.e..
+1. If $f\in L^1(m)$, then the function $F(x)=\int_{-\infty}^x f(t)dt\in NBV\cap AC$ and $F'=f$ a.e..
 2. If $F\in NBV\cap AC$, then $F'\in L^1(m)$ and $F(x)=\int_{-\infty}^xF'(t)dt$.
 
 > $\it Proof$
 >
-> (1) If $f\in L^1(m)$, then $\mu(E)=\int_E f(t)dt$ is a complex Borel measure. Let $F(x)=\int_{-\infty}^xf(t)dt$. Note that $\mu(-\infty,x]=F(x)$. By Theorem 3.29 (1), $F\in NBV$. Moreover, by the uniqueness in Theorem 3.29 (2), $\mu_F=\mu$. Since $\mu_F=\mu\ll m$, by Theorem 3.32 we have $F\in AC$. For the last assertion, by the first proposition in Section 3.5.1, $F'=\frac{d\mu_F}{dm}$ a.e.. Note that $d\mu_F=fdm$, so $F'=f$ a.e..
+> (1) If $f\in L^1(m)$, then $\mu(E)=\int_E f(t)dt$ is a complex Borel measure. Let $F(x)=\int_{-\infty}^xf(t)dt$. Note that $\mu(-\infty,x]=F(x)$. By Theorem 3.29 (1), $F\in NBV$. Moreover, by the uniqueness in Theorem 3.29 (2), $\mu_F=\mu$. Since $\mu_F=\mu\ll m$, by Theorem 3.32 we have $F\in AC$. The last assertion follows from Theorem 3.29 (2) and $d\mu_F=fdm$.
 > 
 > (2) If $F\in NBV\cap AC$, then by Prop 3.30, $F'\in L^1(m)$. By Theorem 3.32, $\mu_F\ll m$. Then by Prop 3.30 (2), $F(x)=\int_{-\infty}^xF'(t)dt$.
 
@@ -608,3 +614,14 @@ If $F\in [a,b]\to\mathbb{C}$, then TFAE.
 1. $F\in AC[a,b]$
 2. $F(x)-F(a)=\int_a^xf(t)dt$ for some $f\in L^1([a,b],m)$.
 3. $F$ is differentiable a.e. on $[a,b]$, $F'\in L^1([a,b],m)$ and $F(x)-F(a)=\int_a^xF'(t)dt$.
+
+<br/><br/>
+
+$\bf e.g.$
+
+Consider $f(x)=x^a\sin(x^{-b})$ where $a,b>0$.
+
+1. If $0<a\leq b$, then $f\notin BV[0,1]$. 
+2. If $0<b<a$, then $f\in AC[0,1]$.
+
+See the following references [Page75 Problem 7 (2)](https://max.book118.com/html/2019/1128/8102005123002065.shtm) and [when-is-fx-xa-sin-x-b-with-f0-0-of-bounded-variation-on-0-1](https://math.stackexchange.com/questions/1996653/when-is-fx-xa-sinx-b-with-f0-0-of-bounded-variation-on-0-1).
