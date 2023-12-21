@@ -479,7 +479,7 @@ If $\mathcal{A}\subset\mathcal{P}(X)$ is an algebra, $\mathcal{C}$ is the monoto
 >
 > Omit.
 
-In fact, the monotone class lemma is equivalent to the $\pi-\lambda$ theorem, which is also widely used in measure theory. See [Monotone Class Theorem and another similar theorem](https://math.stackexchange.com/questions/1841193/monotone-class-theorem-and-another-similar-theorem) and [Monotone class theorem vs Dynkin π−λ theorem](https://math.stackexchange.com/questions/1193970/monotone-class-theorem-vs-dynkin-pi-lambda-theorem).
+In fact, the monotone class lemma is equivalent to the $\pi-\lambda$ theorem, which is also widely used in measure theory. See [Monotone Class Theorem and another similar theorem](https://math.stackexchange.com/questions/1841193/monotone-class-theorem-and-another-similar-theorem) and [Monotone class theorem vs Dynkin $\pi$-$\lambda$ theorem](https://math.stackexchange.com/questions/1193970/monotone-class-theorem-vs-dynkin-pi-lambda-theorem).
 
 $\bf Def/Thm\ (\pi-\lambda\ Theorem)$
 
